@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body class="page-enter" data-page="login">
+  <main class="app-shell">
+    <section class="hero-card reveal">
+      <article class="hero-brand">
+        <img class="brand-logo" src="/Assets/Login Logo.png" alt="Creestudios logo">
+      </article>
+      <article class="hero-content">
+        <h1 class="hero-title">WELCOME!</h1>
+        <p class="hero-subtitle">Log in to continue your cretive journey</p>
+      </article>
+    </section>
+
+    <section class="login-section reveal">
+      <article class="title-section">
+        <h2 class="login-title">LOG IN!</h2>
+      </article>
+
+      <form class="login-form" action="#">
+        <article class="inputs-section">
+          <label class="field-label" for="email">EMAIL ADDRESS</label>
+          <article class="input-wrap">
+            <input id="email" type="email" placeholder="Your@email.com" aria-label="Email address">
+            <span class="input-icon" aria-hidden="true">
+              <img src="Assets/Mail Icon.png" alt="Email icon">
+            </span>
+          </article>
+
+          <label class="field-label" for="password">PASSWORD</label>
+          <article class="input-wrap">
+            <input id="password" type="password" placeholder="Enter your password" aria-label="Password">
+            <button id="passwordToggle" class="input-icon-button pressable" type="button" aria-label="Toggle password visibility">
+              <img id="passwordToggleIcon" src="/Assets/Hidden Icon.png" alt="Password hidden icon">
+            </button>
+          </article>
+
+          <a class="forgot-link pressable" href="#">Forgot Password?</a>
+        </article>
+
+        <section class="actions-section">
+          <button class="primary-button pressable" type="submit">GET STARTED</button>
+
+          <article class="divider" aria-hidden="true">
+            <span class="divider-line"></span>
+            <span class="divider-text">OR</span>
+            <span class="divider-line"></span>
+          </article>
+
+          <article class="google-signup-section">
+            <button class="google-button pressable" type="button" aria-label="Log in with Google">
+              <img src="/Assets/Google.png" alt="Google icon">
+              <span>Log in with Google</span>
+            </button>
+
+            <footer class="signup-footer">
+              <span>Already have an account?</span>
+              <a class="signup-link pressable" href="#">SIGN UP</a>
+            </footer>
+          </article>
+        </section>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

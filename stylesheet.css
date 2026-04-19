@@ -1,0 +1,442 @@
+@font-face {
+  font-family: "Choldera Demo";
+  src: url("./Choldera Demo.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Unbounded";
+  src: url("./Unbounded.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Blue Ocean";
+  src: url("./Blue Ocean.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+}
+
+h1,
+h2,
+p {
+  all: unset;
+  display: block;
+}
+
+body {
+  font-family: "Unbounded", sans-serif;
+  line-height: 1;
+  background-color: #181818;
+  color: #FFEEDC;
+  display: flex;
+  justify-content: center;
+}
+
+body.page-enter {
+  opacity: 0;
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.page-enter.is-visible {
+  opacity: 1;
+}
+
+body.page-exit {
+  opacity: 0;
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html[lang="ar"] body,
+body[lang="ar"],
+[lang="ar"] {
+  font-family: "Blue Ocean", "Unbounded", sans-serif;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to top, rgba(85, 168, 135, 0.07) 0%, rgba(85, 168, 135, 0) 60%), #181818;
+}
+
+.splash-page {
+  overflow: hidden;
+}
+
+.splash-shell {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to top, rgba(85, 168, 135, 0.07) 0%, rgba(85, 168, 135, 0) 60%), #181818;
+}
+
+.splash-video-wrap {
+  width: 100%;
+  min-height: 1px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.splash-video {
+  width: 100%;
+  max-width: 376px;
+  height: auto;
+  display: block;
+  background-color: transparent;
+}
+
+.splash-footer {
+  width: 100%;
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.splash-logo {
+  width: 208px;
+  height: auto;
+  display: block;
+}
+
+.splash-tagline {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #709987;
+  text-align: center;
+}
+
+.hero-card {
+    width: 100%;
+    min-height: 226px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 32px 32px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #55A887;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    background: #181818;
+    box-shadow: 0 8px 16px rgba(85, 168, 135, 0.24);
+    justify-content: center;
+    gap: 16px;
+}
+
+.hero-brand {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.brand-name {
+  font-size: 24px;
+  letter-spacing: 0;
+  color: #FFEEDC;
+  font-weight: 700;
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+}
+
+.brand-logo {
+  width: auto;
+  height: 12px;
+  display: block;
+}
+
+.hero-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-title {
+  font-family: "Unbounded", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFEEDC;
+  text-align: center;
+}
+
+.hero-subtitle {
+  font-size: 12px;
+  font-weight: 400;
+  color: #FFEEDC;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.login-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 32px 32px;
+  gap: 24px;
+}
+
+.title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-title {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #55A887;
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.inputs-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.actions-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.google-signup-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-label {
+  font-size: 16px;
+  color: #FFEEDC;
+  font-family:"Unbounded";
+  font-weight: 300;
+}
+
+.input-wrap {
+  width: 100%;
+  min-height: 56px;
+  border: 1px solid #709987;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px 0 16px;
+  gap: 8px;
+  background-color: #181818;
+}
+
+.input-wrap input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  background-color: transparent;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.input-wrap:focus-within {
+  background-color: #181818;
+}
+
+.input-wrap input:focus,
+.input-wrap input:active {
+  background-color: transparent;
+}
+
+.input-wrap input:-webkit-autofill,
+.input-wrap input:-webkit-autofill:hover,
+.input-wrap input:-webkit-autofill:focus,
+.input-wrap input:-webkit-autofill:active {
+  -webkit-text-fill-color: #FFEEDC;
+  transition: background-color 0s;
+  box-shadow: 0 0 0 1000px #181818 inset;
+}
+
+.input-wrap input::placeholder {
+  color: #709987;
+  opacity: 0.8;
+}
+
+.input-icon-button {
+  border: 0;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 250px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.input-icon-button img {
+  width: 20px;
+}
+
+.input-icon {
+    padding: 20px;
+    box-sizing: border-box;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.input-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.forgot-link {
+    align-self: flex-end;
+    text-decoration: none;
+    color: #55A887;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.primary-button {
+  width: 100%;
+  min-height: 56px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #55A887;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.divider-line {
+  width: 100%;
+  height: 1px;
+  background-color: #709987;
+}
+
+.divider-text {
+  color: #709987;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.google-button {
+  width: 100%;
+  min-height: 56px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #FFEEDC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #181818;
+  font-family: "Unbounded", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.google-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.signup-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.signup-link {
+  text-decoration: none;
+  color: #55A887;
+  font-weight: 700;
+}
+
+.pressable {
+  transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+  transform: scale(1);
+}
+
+.pressable.is-pressed,
+.pressable:active {
+  transform: scale(0.96);
+  opacity: 0.96;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pressable:hover {
+    transform: scale(1.015);
+    opacity: 0.92;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
