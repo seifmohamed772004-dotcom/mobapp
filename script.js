@@ -529,6 +529,25 @@ if (currentPage === "team-chat") {
   }
 }
 
+if (currentPage === "team-tasks") {
+  document.querySelectorAll(".team-tasks-group-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const group = btn.closest(".team-tasks-group");
+      if (!group) {
+        return;
+      }
+      group.classList.toggle("team-tasks-group-open");
+      const isOpen = group.classList.contains("team-tasks-group-open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      btn.classList.toggle("team-tasks-group-toggle-collapsed", !isOpen);
+      const chev = btn.querySelector(".team-tasks-group-chevron");
+      if (chev) {
+        chev.textContent = isOpen ? "▾" : "›";
+      }
+    });
+  });
+}
+
 {
   const searchWrap = document.querySelector(".home-search-wrap");
   const searchInput = searchWrap ? searchWrap.querySelector("input") : null;
