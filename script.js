@@ -10,6 +10,28 @@ const goWithFade = (nextPath) => {
   }, 200);
 };
 
+const showPreloaderThenNavigate = (nextPath, delayMs) => {
+  const overlay = document.createElement("section");
+  overlay.className = "preloader-overlay";
+  overlay.setAttribute("aria-label", "Loading");
+
+  const logo = document.createElement("img");
+  logo.className = "preloader-logo";
+  logo.src = "/Assets/Login Logo.png";
+  logo.alt = "Creestudios logo";
+
+  overlay.appendChild(logo);
+  document.body.appendChild(overlay);
+
+  window.requestAnimationFrame(() => {
+    overlay.classList.add("is-visible");
+  });
+
+  window.setTimeout(() => {
+    window.location.href = nextPath;
+  }, delayMs);
+};
+
 const currentPage = document.body.dataset.page;
 
 if (currentPage === "splash") {
@@ -196,6 +218,16 @@ if (currentPage === "onboarding") {
   initializeOnboardingStep(1);
 }
 
+if (currentPage === "login" || currentPage === "signup") {
+  const authForm = document.querySelector(".login-form");
+  if (authForm) {
+    authForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      showPreloaderThenNavigate("Home.html", 500);
+    });
+  }
+}
+
 const pressables = document.querySelectorAll(".pressable");
 
 pressables.forEach((element) => {
@@ -238,5 +270,18 @@ if (passwordField && passwordToggle && passwordToggleIcon) {
     passwordField.type = isHidden ? "text" : "password";
     passwordToggleIcon.src = isHidden ? "/Assets/Shown Icon.png" : "/Assets/Hidden Icon.png";
     passwordToggleIcon.alt = isHidden ? "Password shown icon" : "Password hidden icon";
+  });
+}
+
+const confirmPasswordField = document.querySelector("#confirm-password");
+const confirmPasswordToggle = document.querySelector("#confirm-password-toggle");
+const confirmPasswordToggleIcon = document.querySelector("#confirm-password-toggle-icon");
+
+if (confirmPasswordField && confirmPasswordToggle && confirmPasswordToggleIcon) {
+  confirmPasswordToggle.addEventListener("click", () => {
+    const isHidden = confirmPasswordField.type === "password";
+    confirmPasswordField.type = isHidden ? "text" : "password";
+    confirmPasswordToggleIcon.src = isHidden ? "/Assets/Shown Icon.png" : "/Assets/Hidden Icon.png";
+    confirmPasswordToggleIcon.alt = isHidden ? "Confirm password shown icon" : "Confirm password hidden icon";
   });
 }
