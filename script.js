@@ -228,6 +228,52 @@ if (currentPage === "login" || currentPage === "signup") {
   }
 }
 
+if (currentPage === "studio-call") {
+  const questionsOverlay = document.querySelector("#studioQuestionsOverlay");
+  const questionsOpen = document.querySelector("#studioQuestionsOpen");
+  const questionsClose = document.querySelector("#studioQuestionsClose");
+  const questionsBackdrop = document.querySelector("#studioQuestionsBackdrop");
+
+  const openStudioQuestions = () => {
+    if (!questionsOverlay) {
+      return;
+    }
+    questionsOverlay.classList.add("is-open");
+    questionsOverlay.setAttribute("aria-hidden", "false");
+  };
+
+  const closeStudioQuestions = () => {
+    if (!questionsOverlay) {
+      return;
+    }
+    questionsOverlay.classList.remove("is-open");
+    questionsOverlay.setAttribute("aria-hidden", "true");
+  };
+
+  if (questionsOpen) {
+    questionsOpen.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      openStudioQuestions();
+    });
+  }
+
+  if (questionsClose) {
+    questionsClose.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      closeStudioQuestions();
+    });
+  }
+
+  if (questionsBackdrop) {
+    questionsBackdrop.addEventListener("click", (event) => {
+      event.preventDefault();
+      closeStudioQuestions();
+    });
+  }
+}
+
 if (currentPage === "cree-ai") {
   const menuOpenButtons = document.querySelectorAll("[data-cree-menu-open]");
   const sidebar = document.querySelector("#creeSidebar");

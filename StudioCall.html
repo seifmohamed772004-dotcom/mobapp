@@ -124,7 +124,7 @@
         <path d="M15 10l4-3v10l-4-3H5a2 2 0 01-2-2V8a2 2 0 012-2h10z" stroke="#FFEEDC" stroke-width="2" stroke-linejoin="round"/>
       </svg>
     </button>
-    <button class="studio-control-btn studio-control-sparkle pressable" type="button" aria-label="Studio effects">
+    <button id="studioQuestionsOpen" class="studio-control-btn studio-control-sparkle pressable" type="button" aria-label="Open CREE AI questions">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M12 2l1.5 5.5L19 12l-5.5 4.5L12 22l-1.5-5.5L5 12l5.5-4.5L12 2z" fill="#FFEEDC"/>
       </svg>
@@ -189,6 +189,107 @@
     <footer class="home-nav-footer">
       <button class="home-nav-logout pressable" type="button">LOGOUT</button>
     </footer>
+  </section>
+
+  <section id="studioQuestionsOverlay" class="studio-questions-overlay" aria-hidden="true" aria-label="Questions">
+    <button id="studioQuestionsBackdrop" class="studio-questions-backdrop pressable" type="button" aria-label="Close questions"></button>
+    <section class="studio-questions-sheet">
+      <article class="studio-questions-head">
+        <article class="studio-questions-head-text">
+          <h2 class="studio-questions-title">QUESTIONS</h2>
+          <p class="studio-questions-subtitle">Questions made by CREE AI according to the team specialty</p>
+        </article>
+        <button id="studioQuestionsClose" class="studio-questions-close pressable" type="button" aria-label="Close questions">
+          <img src="/Assets/cancel icon.png" alt="Close icon">
+        </button>
+      </article>
+      <section class="studio-questions-list">
+        <article class="studio-question-card studio-question-card--a">
+          <article class="studio-question-icon-wrap" aria-hidden="true">
+            <svg class="studio-question-icon" width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18V6l10-2v12" stroke="#D63A3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 10l10-2" stroke="#D63A3A" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </article>
+          <article class="studio-question-body">
+            <article class="studio-question-label-row">
+              <svg class="studio-question-wand" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 21l6-6M14 4l6 6-8 8-6-6 8-8z" stroke="#FFEEDC" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+              <p class="studio-question-label">Cree AI Recommendation</p>
+            </article>
+            <p class="studio-question-text">WHAT GENRE DOES THE TEAM SPECIALIZE IN?</p>
+          </article>
+        </article>
+        <article class="studio-question-card studio-question-card--b">
+          <article class="studio-question-icon-wrap" aria-hidden="true">
+            <svg class="studio-question-icon" width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M8 10a3 3 0 116 0M5 20v-1a3 3 0 013-3h4a3 3 0 013 3v1M16 9a3 3 0 10-6 0" stroke="#55AAAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </article>
+          <article class="studio-question-body">
+            <article class="studio-question-label-row">
+              <svg class="studio-question-wand" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 21l6-6M14 4l6 6-8 8-6-6 8-8z" stroke="#FFEEDC" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+              <p class="studio-question-label">Cree AI Recommendation</p>
+            </article>
+            <p class="studio-question-text">WOULD YOU LIKE TO COLLABORATE ON A TRACK?</p>
+          </article>
+        </article>
+        <article class="studio-question-card studio-question-card--c">
+          <article class="studio-question-icon-wrap" aria-hidden="true">
+            <svg class="studio-question-icon" width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M12 3v1M12 20v1M5.6 5.6l.7.7M17.7 17.7l.7.7M3 12h1M20 12h1M5.6 18.4l.7-.7M17.7 6.3l.7-.7" stroke="#55A887" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 8a4 4 0 104 4" stroke="#55A887" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </article>
+          <article class="studio-question-body">
+            <article class="studio-question-label-row">
+              <svg class="studio-question-wand" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 21l6-6M14 4l6 6-8 8-6-6 8-8z" stroke="#FFEEDC" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+              <p class="studio-question-label">Cree AI Recommendation</p>
+            </article>
+            <p class="studio-question-text">ASK ABOUT THEIR PRODUCTION WORKFLOW</p>
+          </article>
+        </article>
+        <article class="studio-question-card studio-question-card--d">
+          <article class="studio-question-icon-wrap" aria-hidden="true">
+            <svg class="studio-question-icon" width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M12 14a3 3 0 003-3V5a3 3 0 10-6 0v6a3 3 0 003 3z" stroke="#709987" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M19 10v1a7 7 0 01-14 0v-1M12 18v4M8 22h8" stroke="#709987" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </article>
+          <article class="studio-question-body">
+            <article class="studio-question-label-row">
+              <svg class="studio-question-wand" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 21l6-6M14 4l6 6-8 8-6-6 8-8z" stroke="#FFEEDC" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+              <p class="studio-question-label">Cree AI Recommendation</p>
+            </article>
+            <p class="studio-question-text">WHO HANDLES VOCAL RECORDING?</p>
+          </article>
+        </article>
+        <article class="studio-question-card studio-question-card--e">
+          <article class="studio-question-icon-wrap" aria-hidden="true">
+            <svg class="studio-question-icon" width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M6 7h12v12a2 2 0 01-2 2H8a2 2 0 01-2-2V7z" stroke="#55AAAA" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M8 11h8M10 15h4" stroke="#55AAAA" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </article>
+          <article class="studio-question-body">
+            <article class="studio-question-label-row">
+              <svg class="studio-question-wand" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 21l6-6M14 4l6 6-8 8-6-6 8-8z" stroke="#FFEEDC" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+              <p class="studio-question-label">Cree AI Recommendation</p>
+            </article>
+            <p class="studio-question-text">SCHEDULE A STUDIO</p>
+          </article>
+        </article>
+      </section>
+    </section>
   </section>
 
   <script src="script.js"></script>
