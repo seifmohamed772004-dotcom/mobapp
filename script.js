@@ -33,6 +33,128 @@ if (currentPage === "splash") {
   }
 }
 
+if (currentPage === "onboarding") {
+  const steps = Array.from(document.querySelectorAll(".onboarding-step"));
+  const backButton = document.querySelector(".onboarding-back");
+  const continueButton = document.querySelector(".onboarding-continue");
+  const selectedCount = document.querySelector("[data-selected-count]");
+
+  const selections = {
+    1: new Set(),
+    2: new Set(),
+    3: new Set(),
+  };
+
+  let activeStep = 1;
+
+  const renderStep = () => {
+    steps.forEach((step) => {
+      const stepNumber = Number(step.dataset.step);
+      const isActive = stepNumber === activeStep;
+      step.classList.toggle("is-active", isActive);
+      if (isActive) {
+        step.classList.add("is-visible");
+      }
+    });
+  };
+
+  const renderControls = () => {
+    const currentSelectionCount = selections[activeStep].size;
+    const isDisabled = currentSelectionCount < 1;
+
+    if (continueButton) {
+      continueButton.classList.toggle("is-disabled", isDisabled);
+      continueButton.disabled = isDisabled;
+      continueButton.textContent = activeStep === 3 ? "GET STARTED" : "Continue";
+    }
+
+    if (selectedCount && activeStep === 2) {
+      selectedCount.textContent = String(selections[2].size);
+    }
+  };
+
+  const applySelectedStyles = () => {
+    steps.forEach((step) => {
+      const stepNumber = Number(step.dataset.step);
+      const options = Array.from(step.querySelectorAll("[data-value]"));
+      options.forEach((option) => {
+        option.classList.toggle("is-selected", selections[stepNumber].has(option.dataset.value));
+      });
+    });
+  };
+
+  const moveToStep = (stepNumber) => {
+    activeStep = stepNumber;
+    renderStep();
+    applySelectedStyles();
+    renderControls();
+  };
+
+  const step1Options = Array.from(document.querySelectorAll('[data-step="1"] [data-value]'));
+  step1Options.forEach((option) => {
+    option.addEventListener("click", () => {
+      selections[1].clear();
+      selections[1].add(option.dataset.value);
+      applySelectedStyles();
+      renderControls();
+    });
+  });
+
+  const step2Options = Array.from(document.querySelectorAll('[data-step="2"] [data-value]'));
+  step2Options.forEach((option) => {
+    option.addEventListener("click", () => {
+      const value = option.dataset.value;
+      if (selections[2].has(value)) {
+        selections[2].delete(value);
+      } else if (selections[2].size < 5) {
+        selections[2].add(value);
+      }
+      applySelectedStyles();
+      renderControls();
+    });
+  });
+
+  const step3Options = Array.from(document.querySelectorAll('[data-step="3"] [data-value]'));
+  step3Options.forEach((option) => {
+    option.addEventListener("click", () => {
+      const value = option.dataset.value;
+      if (selections[3].has(value)) {
+        selections[3].delete(value);
+      } else {
+        selections[3].add(value);
+      }
+      applySelectedStyles();
+      renderControls();
+    });
+  });
+
+  if (backButton) {
+    backButton.addEventListener("click", () => {
+      if (activeStep === 1) {
+        goWithFade("SignUp.html");
+      } else {
+        moveToStep(activeStep - 1);
+      }
+    });
+  }
+
+  if (continueButton) {
+    continueButton.addEventListener("click", () => {
+      if (continueButton.disabled) {
+        return;
+      }
+
+      if (activeStep < 3) {
+        moveToStep(activeStep + 1);
+      } else {
+        goWithFade("Login.html");
+      }
+    });
+  }
+
+  moveToStep(1);
+}
+
 const pressables = document.querySelectorAll(".pressable");
 
 pressables.forEach((element) => {

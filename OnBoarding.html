@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>On Boarding</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body class="page-enter" data-page="onboarding">
+  <main class="onboarding-shell">
+    <section class="onboarding-step is-active reveal" data-step="1">
+      <nav class="onboarding-progress" aria-label="Onboarding progress">
+        <span class="progress-segment is-active"></span>
+        <span class="progress-segment"></span>
+        <span class="progress-segment"></span>
+      </nav>
+
+      <article class="onboarding-head">
+        <h1 class="onboarding-title">WHAT DO YOU CREATE?</h1>
+        <p class="onboarding-subtitle">This helps us personalize your feed and connect you with the right communities.</p>
+      </article>
+
+      <section class="option-list single-select" aria-label="Creative roles">
+        <button class="onboard-card pressable" type="button" data-value="designer">
+          <span class="onboard-icon"><img src="/assets/icon-designer.svg" alt="Designer icon"></span>
+          <span class="onboard-card-text">Designer</span>
+        </button>
+        <button class="onboard-card pressable" type="button" data-value="music-producer">
+          <span class="onboard-icon"><img src="/assets/icon-music.svg" alt="Music producer icon"></span>
+          <span class="onboard-card-text">Music Producer</span>
+        </button>
+        <button class="onboard-card pressable" type="button" data-value="photographer">
+          <span class="onboard-icon"><img src="/assets/icon-camera.svg" alt="Photographer icon"></span>
+          <span class="onboard-card-text">Photographer</span>
+        </button>
+        <button class="onboard-card pressable" type="button" data-value="developer">
+          <span class="onboard-icon"><img src="/assets/icon-code.svg" alt="Developer icon"></span>
+          <span class="onboard-card-text">Developer</span>
+        </button>
+        <button class="onboard-card pressable" type="button" data-value="artist">
+          <span class="onboard-icon"><img src="/assets/icon-artist.svg" alt="Artist icon"></span>
+          <span class="onboard-card-text">Artist</span>
+        </button>
+        <button class="onboard-card pressable" type="button" data-value="other-creative">
+          <span class="onboard-icon"><img src="/assets/icon-briefcase.svg" alt="Other creative icon"></span>
+          <span class="onboard-card-text">Other Creative</span>
+        </button>
+      </section>
+    </section>
+
+    <section class="onboarding-step reveal" data-step="2">
+      <nav class="onboarding-progress" aria-label="Onboarding progress">
+        <span class="progress-segment is-active"></span>
+        <span class="progress-segment is-active"></span>
+        <span class="progress-segment"></span>
+      </nav>
+
+      <article class="onboarding-head">
+        <h1 class="onboarding-title">WHAT INTERESTS YOU?</h1>
+        <p class="onboarding-subtitle">Select at least 3 areas to help us curate your experience. You can always change this later.</p>
+      </article>
+
+      <p class="onboarding-selected-count"><span data-selected-count>0</span> SELECTED</p>
+
+      <section class="chip-list multi-select" aria-label="Interests">
+        <button class="interest-chip pressable" type="button" data-value="uiux">UI/UX Design</button>
+        <button class="interest-chip pressable" type="button" data-value="graphic">Graphic Design</button>
+        <button class="interest-chip pressable" type="button" data-value="motion">Motion Graphics</button>
+        <button class="interest-chip pressable" type="button" data-value="illustration">Illustration</button>
+        <button class="interest-chip pressable" type="button" data-value="typography">Typography</button>
+        <button class="interest-chip pressable" type="button" data-value="3d">3D Design</button>
+        <button class="interest-chip pressable" type="button" data-value="branding">Branding</button>
+        <button class="interest-chip pressable" type="button" data-value="web">Web Design</button>
+        <button class="interest-chip pressable" type="button" data-value="mobile">Mobile Design</button>
+        <button class="interest-chip pressable" type="button" data-value="product">Product Design</button>
+        <button class="interest-chip pressable" type="button" data-value="direction">Creative Direction</button>
+        <button class="interest-chip pressable" type="button" data-value="photo">Photography</button>
+        <button class="interest-chip pressable" type="button" data-value="video">Video Editing</button>
+        <button class="interest-chip pressable" type="button" data-value="animation">Animation</button>
+        <button class="interest-chip pressable" type="button" data-value="game">Game Design</button>
+        <button class="interest-chip pressable interest-chip-full" type="button" data-value="other">OTHER</button>
+      </section>
+    </section>
+
+    <section class="onboarding-step reveal" data-step="3">
+      <nav class="onboarding-progress" aria-label="Onboarding progress">
+        <span class="progress-segment is-active"></span>
+        <span class="progress-segment is-active"></span>
+        <span class="progress-segment is-active"></span>
+      </nav>
+
+      <article class="onboarding-head">
+        <h1 class="onboarding-title">WHAT'S YOUR MAIN GOAL?</h1>
+        <p class="onboarding-subtitle">We'll customize your experience based on what matters most to you.</p>
+      </article>
+
+      <section class="option-list multi-select" aria-label="Main goals">
+        <button class="onboard-card pressable" type="button" data-value="find-work">
+          <span class="onboard-icon"><img src="/assets/icon-briefcase.svg" alt="Find work icon"></span>
+          <span class="onboard-card-content">
+            <span class="onboard-card-title">Find Work</span>
+            <span class="onboard-card-subtitle">Browse job offers and connect with clients</span>
+          </span>
+        </button>
+        <button class="onboard-card pressable" type="button" data-value="build-network">
+          <span class="onboard-icon"><img src="/assets/icon-people.svg" alt="Build network icon"></span>
+          <span class="onboard-card-content">
+            <span class="onboard-card-title">Build Network</span>
+            <span class="onboard-card-subtitle">Connect with fellow creatives and grow</span>
+          </span>
+        </button>
+        <button class="onboard-card pressable" type="button" data-value="showcase-work">
+          <span class="onboard-icon"><img src="/assets/icon-sparkle.svg" alt="Showcase work icon"></span>
+          <span class="onboard-card-content">
+            <span class="onboard-card-title">Showcase Work</span>
+            <span class="onboard-card-subtitle">Share your portfolio and get feedback</span>
+          </span>
+        </button>
+        <button class="onboard-card pressable" type="button" data-value="work-team">
+          <span class="onboard-icon"><img src="/assets/icon-sparkle.svg" alt="Work with team icon"></span>
+          <span class="onboard-card-content">
+            <span class="onboard-card-title">Work With Team</span>
+            <span class="onboard-card-subtitle">Learn and grow together</span>
+          </span>
+        </button>
+      </section>
+    </section>
+
+    <footer class="onboarding-footer">
+      <button class="onboarding-back pressable" type="button" aria-label="Go back">
+        <img src="/assets/icon-arrow-left.svg" alt="Back icon">
+      </button>
+      <button class="onboarding-continue pressable is-disabled" type="button">Continue</button>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
