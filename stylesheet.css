@@ -1956,6 +1956,223 @@ body[lang="ar"],
   font-weight: 700;
 }
 
+.teams-shell {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  padding: 0;
+  padding-bottom: 96px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: #181818;
+}
+
+.teams-header {
+  border-bottom: 1px solid rgba(112, 153, 135, 0.3);
+}
+
+.teams-tabs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.teams-tab {
+  min-height: 24px;
+  border: 1px solid #709987;
+  border-radius: 250px;
+  background-color: #252525;
+  color: #FFEEDC;
+  padding: 0 12px;
+  box-sizing: border-box;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+}
+
+.teams-tab-active {
+  background-color: #55A887;
+  border-color: #55A887;
+  color: #181818;
+}
+
+.teams-content {
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.teams-feature-card {
+  width: 100%;
+  border: 1px solid #709987;
+  border-radius: 16px;
+  background-color: #55A887;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.teams-feature-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.teams-feature-top p {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #FFEEDC;
+}
+
+.teams-feature-top span {
+  min-height: 24px;
+  border-radius: 250px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  background-color: #FFEEDC;
+  color: #55A887;
+  display: flex;
+  align-items: center;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.teams-feature-card h1 {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 24px;
+  color: #FFEEDC;
+}
+
+.teams-feature-card p {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #FFEEDC;
+  line-height: 1.5;
+}
+
+.teams-feature-card footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.teams-feature-card footer span {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #181818;
+  opacity: 0.8;
+}
+
+.teams-mini-button {
+  min-height: 24px;
+  border: 0;
+  border-radius: 250px;
+  background-color: #55A887;
+  color: #181818;
+  padding: 0 8px;
+  box-sizing: border-box;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.teams-mini-button-alert {
+  background-color: #D63A3A;
+  color: #FFEEDC;
+}
+
+.teams-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.teams-group-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.teams-group-head h2 {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 20px;
+  color: #FFEEDC;
+}
+
+.teams-view-all {
+  border: 0;
+  background: transparent;
+  color: #55A887;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+}
+
+.teams-interest-card,
+.teams-job-card {
+  width: 100%;
+  border: 1px solid #709987;
+  border-radius: 16px;
+  background-color: #252525;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.teams-interest-card {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.teams-interest-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.teams-interest-left h3,
+.teams-job-head h3,
+.teams-job-foot h4 {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #FFEEDC;
+}
+
+.teams-interest-left p,
+.teams-job-head p,
+.teams-job-foot p {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #709987;
+}
+
+.teams-job-head,
+.teams-job-foot {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
 @keyframes logoutTextFadeIn {
   from {
     color: #FFEEDC;
