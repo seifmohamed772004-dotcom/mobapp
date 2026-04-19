@@ -228,6 +228,37 @@ if (currentPage === "login" || currentPage === "signup") {
   }
 }
 
+if (currentPage === "home") {
+  const searchWrap = document.querySelector(".home-search-wrap");
+  const searchInput = searchWrap ? searchWrap.querySelector("input") : null;
+  const searchPanel = document.querySelector(".home-search-panel");
+  const searchPanelInput = document.querySelector("#homeSearchPanelInput");
+  const searchClose = document.querySelector("#homeSearchClose");
+
+  if (searchWrap && searchPanel) {
+    const openSearchPanel = () => {
+      searchPanel.classList.add("is-open");
+      window.requestAnimationFrame(() => {
+        if (searchPanelInput) {
+          searchPanelInput.focus();
+        }
+      });
+    };
+
+    const closeSearchPanel = () => {
+      searchPanel.classList.remove("is-open");
+    };
+
+    searchWrap.addEventListener("click", openSearchPanel);
+    if (searchInput) {
+      searchInput.addEventListener("focus", openSearchPanel);
+    }
+    if (searchClose) {
+      searchClose.addEventListener("click", closeSearchPanel);
+    }
+  }
+}
+
 const pressables = document.querySelectorAll(".pressable");
 
 pressables.forEach((element) => {
