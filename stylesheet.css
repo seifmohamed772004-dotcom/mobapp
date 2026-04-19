@@ -2857,6 +2857,221 @@ body[lang="ar"],
   object-fit: cover;
 }
 
+.studio-call-shell {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+  padding-bottom: 176px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background-color: #181818;
+}
+
+.studio-call-brand {
+  border-bottom: 1px solid rgba(112, 153, 135, 0.3);
+}
+
+.studio-call-subhead {
+  width: 100%;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.studio-call-subhead-icon {
+  width: 24px;
+  height: 24px;
+  border: 0;
+  background: transparent;
+  border-radius: 250px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.studio-call-subhead-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.studio-call-subhead-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.studio-call-title {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFEEDC;
+  text-align: center;
+}
+
+.studio-call-timer {
+  font-family: "Unbounded", sans-serif;
+  font-size: 24px;
+  color: #55A887;
+  text-align: center;
+}
+
+.studio-call-menu {
+  width: 24px;
+  height: 24px;
+  border: 0;
+  background: transparent;
+  border-radius: 250px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.studio-participants {
+  width: 100%;
+  padding: 16px 16px 24px 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: flex-start;
+}
+
+.studio-participant-card {
+  position: relative;
+  width: calc((100% - 8px) / 2);
+  box-sizing: border-box;
+  min-height: 128px;
+  border-radius: 16px;
+  border-width: 2px;
+  border-style: solid;
+  background-color: #181818;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 8px 16px 8px;
+}
+
+.studio-participant-card--you {
+  border-color: #55A887;
+}
+
+.studio-participant-card--ar {
+  border-color: #D63A3A;
+}
+
+.studio-participant-card--fc {
+  border-color: #709987;
+}
+
+.studio-participant-card--hb {
+  border-color: #55AAAA;
+}
+
+.studio-participant-card--rs {
+  border-color: #D63A3A;
+}
+
+.studio-participant-card--qw {
+  border-color: #55A887;
+}
+
+.studio-participant-card--jk {
+  border-color: #709987;
+}
+
+.studio-participant-card--wr {
+  border-color: #55AAAA;
+}
+
+.studio-participant-mic {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 250px;
+  border: 0;
+  background-color: #252525;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.studio-participant-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 250px;
+  background-color: #252525;
+  border: 1px solid #709987;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #FFEEDC;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+  box-sizing: border-box;
+}
+
+.studio-call-controls {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 80px;
+  z-index: 13;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: linear-gradient(180deg, rgba(24, 24, 24, 0) 0%, #181818 40%);
+}
+
+.studio-control-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 250px;
+  border: 0;
+  background-color: #252525;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.studio-control-sparkle {
+  background: linear-gradient(135deg, #55A887 0%, #55AAAA 100%);
+}
+
+.studio-control-end {
+  background-color: #D63A3A;
+  box-shadow: 0 0 16px rgba(214, 58, 58, 0.45);
+}
+
 @keyframes logoutTextFadeIn {
   from {
     color: #FFEEDC;
