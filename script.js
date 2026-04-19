@@ -583,11 +583,20 @@ genericNavTargets.forEach((item) => {
     return;
   }
 
-  item.addEventListener("click", () => {
+  const navigateToTarget = () => {
     const target = item.getAttribute("data-nav-target");
     if (!target) {
       return;
     }
     goWithFade(target);
+  };
+
+  item.addEventListener("click", navigateToTarget);
+
+  item.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      navigateToTarget();
+    }
   });
 });

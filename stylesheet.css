@@ -2328,7 +2328,7 @@ body[lang="ar"],
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
 }
 
 .team-details-head {
@@ -2417,7 +2417,7 @@ body[lang="ar"],
   padding: 0 24px;
   box-sizing: border-box;
   font-family: "Unbounded", sans-serif;
-  font-size: 24px;
+  font-size: 16px;
   border: 1px solid #55A887;
 }
 
@@ -2452,7 +2452,7 @@ body[lang="ar"],
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 }
 
 .team-details-info-row {
@@ -2465,7 +2465,7 @@ body[lang="ar"],
 
 .team-details-info-row p {
   font-family: "Unbounded", sans-serif;
-  font-size: 24px;
+  font-size: 12px;
   color: #FFEEDC;
 }
 
@@ -2494,9 +2494,10 @@ body[lang="ar"],
 
 .team-details-description {
   font-family: "Unbounded", sans-serif;
-  font-size: 24px;
+  font-size: 14px;
   color: #FFEEDC;
-  opacity: 0.8;
+  line-height: 1.5;
+  opacity: 0.7;
 }
 
 .team-details-members {
@@ -2522,7 +2523,7 @@ body[lang="ar"],
 .team-details-members-head h3,
 .team-details-members-head span {
   font-family: "Choldera Demo", "Unbounded", sans-serif;
-  font-size: 24px;
+  font-size: 16px;
   color: #FFEEDC;
 }
 
@@ -2547,7 +2548,7 @@ body[lang="ar"],
 
 .team-member-left p {
   font-family: "Unbounded", sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   color: #FFEEDC;
 }
 
@@ -2575,6 +2576,285 @@ body[lang="ar"],
   font-family: "Unbounded", sans-serif;
   font-size: 24px;
   color: #709987;
+}
+
+.team-member-row[data-nav-target] {
+  cursor: pointer;
+}
+
+.member-profile-shell {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+  padding-bottom: 96px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: #181818;
+  overflow: hidden;
+}
+
+.member-profile-brand {
+  border-bottom: 1px solid rgba(112, 153, 135, 0.3);
+}
+
+.member-profile-subnav {
+  width: 100%;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.member-profile-back {
+  width: 24px;
+  height: 24px;
+  border: 0;
+  background: transparent;
+  border-radius: 250px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.member-profile-back img {
+  width: 24px;
+  height: 24px;
+}
+
+.member-profile-hero {
+  width: 100%;
+  padding: 16px 24px 24px 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.member-profile-photo-wrap {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  box-sizing: border-box;
+}
+
+.member-profile-photo {
+  width: 128px;
+  height: 128px;
+  border-radius: 250px;
+  object-fit: cover;
+  border: 4px solid #55A887;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 8px rgba(85, 168, 135, 0.2);
+}
+
+.member-profile-edit {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 250px;
+  border: 2px solid #181818;
+  background-color: #55A887;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.member-profile-name {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFEEDC;
+  text-align: center;
+}
+
+.member-profile-role {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #55A887;
+  text-align: center;
+}
+
+.member-profile-status {
+  min-height: 32px;
+  border-radius: 250px;
+  border: 1px solid #55A887;
+  background-color: #252525;
+  padding: 0 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.member-profile-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 250px;
+  background-color: #55A887;
+}
+
+.member-profile-status p {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #55A887;
+}
+
+.member-profile-rating {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.member-profile-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.member-profile-star {
+  font-family: "Unbounded", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #55A887;
+}
+
+.member-profile-star-empty {
+  color: #181818;
+  text-shadow: 0 0 0 #55A887;
+  -webkit-text-stroke: 1px #55A887;
+}
+
+.member-profile-rating-value {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #FFEEDC;
+}
+
+.member-profile-gallery {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 250px;
+  border: 1px solid #55A887;
+  background: transparent;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.member-profile-actions-row {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.member-profile-action {
+  flex: 1;
+  min-height: 48px;
+  border-radius: 4px;
+  border: 0;
+  padding: 0 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: "Unbounded", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  color: #FFEEDC;
+}
+
+.member-profile-action-primary {
+  background-color: #55A887;
+  color: #FFEEDC;
+}
+
+.member-profile-action-secondary {
+  background-color: #252525;
+  color: #FFEEDC;
+}
+
+.member-profile-action-icon {
+  flex-shrink: 0;
+}
+
+.member-profile-dash-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  align-content: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.member-profile-dash-icon span {
+  width: 8px;
+  height: 8px;
+  background-color: #FFEEDC;
+  border-radius: 2px;
+  display: block;
+}
+
+.member-profile-separator {
+  width: 100%;
+  height: 1px;
+  background-color: #2d2d2d;
+  flex-shrink: 0;
+}
+
+.member-profile-posts {
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.member-profile-post-card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #252525;
+}
+
+.member-profile-post-card img {
+  width: 100%;
+  height: 280px;
+  display: block;
+  object-fit: cover;
 }
 
 @keyframes logoutTextFadeIn {
