@@ -228,6 +228,128 @@ if (currentPage === "login" || currentPage === "signup") {
   }
 }
 
+if (currentPage === "cree-ai") {
+  const menuOpenButtons = document.querySelectorAll("[data-cree-menu-open]");
+  const sidebar = document.querySelector("#creeSidebar");
+  const sidebarBackdrop = document.querySelector("#creeSidebarBackdrop");
+  const sidebarMain = document.querySelector("#creeSidebarMain");
+  const sidebarPrev = document.querySelector("#creeSidebarPrev");
+  const sidebarClose = document.querySelector("#creeSidebarClose");
+  const prevCancel = document.querySelector("#creePrevCancel");
+  const openPrevButton = document.querySelector("#creeOpenPrevChats");
+  const startNewChatButton = document.querySelector("#creeStartNewChat");
+  const startNewChatPrevButton = document.querySelector("#creeStartNewChatPrev");
+  const backToStudioButton = document.querySelector("#creeBackToStudio");
+  const chatThread = document.querySelector("#creeChatThread");
+  const chatForm = document.querySelector("#creeChatForm");
+  const chatInput = document.querySelector("#creeChatInput");
+
+  const setSidebarPage = (page) => {
+    if (!sidebarMain || !sidebarPrev) {
+      return;
+    }
+    sidebarMain.classList.toggle("is-active", page === "main");
+    sidebarPrev.classList.toggle("is-active", page === "prev");
+  };
+
+  const openSidebar = () => {
+    setSidebarPage("main");
+    if (sidebar) {
+      sidebar.classList.add("is-open");
+    }
+    if (sidebarBackdrop) {
+      sidebarBackdrop.classList.add("is-open");
+    }
+  };
+
+  const closeSidebar = () => {
+    if (sidebar) {
+      sidebar.classList.remove("is-open");
+    }
+    if (sidebarBackdrop) {
+      sidebarBackdrop.classList.remove("is-open");
+    }
+    setSidebarPage("main");
+  };
+
+  const getAiGreeting = () => {
+    return "Hello! I'm CREE AI, your creative assistant. How can I help you today?";
+  };
+
+  const createBubble = (type, text) => {
+    const article = document.createElement("article");
+    article.className = "cree-bubble " + (type === "user" ? "cree-bubble-user" : "cree-bubble-ai");
+    const paragraph = document.createElement("p");
+    paragraph.textContent = text;
+    article.appendChild(paragraph);
+    return article;
+  };
+
+  const createNewChat = () => {
+    if (!chatThread) {
+      return;
+    }
+    chatThread.innerHTML = "";
+    chatThread.appendChild(createBubble("ai", getAiGreeting()));
+    closeSidebar();
+    if (chatInput) {
+      chatInput.value = "";
+      chatInput.focus();
+    }
+  };
+
+  menuOpenButtons.forEach((button) => {
+    button.addEventListener("click", openSidebar);
+  });
+
+  if (sidebarBackdrop) {
+    sidebarBackdrop.addEventListener("click", closeSidebar);
+  }
+
+  if (sidebarClose) {
+    sidebarClose.addEventListener("click", closeSidebar);
+  }
+
+  if (prevCancel) {
+    prevCancel.addEventListener("click", () => setSidebarPage("main"));
+  }
+
+  if (openPrevButton) {
+    openPrevButton.addEventListener("click", () => setSidebarPage("prev"));
+  }
+
+  if (startNewChatButton) {
+    startNewChatButton.addEventListener("click", createNewChat);
+  }
+
+  if (startNewChatPrevButton) {
+    startNewChatPrevButton.addEventListener("click", createNewChat);
+  }
+
+  if (backToStudioButton) {
+    backToStudioButton.addEventListener("click", () => {
+      goWithFade("Home.html");
+    });
+  }
+
+  if (chatForm && chatInput && chatThread) {
+    chatForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const value = chatInput.value.trim();
+      if (!value) {
+        return;
+      }
+
+      chatThread.appendChild(createBubble("user", value));
+      chatInput.value = "";
+
+      window.setTimeout(() => {
+        chatThread.appendChild(createBubble("ai", "Absolutely! Creating your first portfolio is exciting. Start by defining your goal, selecting your strongest projects, and telling the story behind each one."));
+      }, 200);
+    });
+  }
+}
+
 {
   const searchWrap = document.querySelector(".home-search-wrap");
   const searchInput = searchWrap ? searchWrap.querySelector("input") : null;
