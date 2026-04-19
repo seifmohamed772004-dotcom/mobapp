@@ -285,3 +285,18 @@ if (confirmPasswordField && confirmPasswordToggle && confirmPasswordToggleIcon) 
     confirmPasswordToggleIcon.alt = isHidden ? "Confirm password shown icon" : "Confirm password hidden icon";
   });
 }
+
+const likeButtons = document.querySelectorAll("[data-like-toggle]");
+
+likeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const icon = button.querySelector("[data-like-icon]");
+    if (!icon) {
+      return;
+    }
+
+    const isLiked = button.classList.toggle("is-liked");
+    icon.src = isLiked ? "/Assets/Liked Icon.png" : "/Assets/Like Icon.png";
+    icon.alt = isLiked ? "Liked icon" : "Like icon";
+  });
+});
