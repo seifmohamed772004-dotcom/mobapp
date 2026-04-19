@@ -2306,6 +2306,277 @@ body[lang="ar"],
   gap: 8px;
 }
 
+.team-details-shell {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: #181818;
+}
+
+.team-details-top {
+  border-bottom: 1px solid rgba(112, 153, 135, 0.3);
+}
+
+.team-details-content {
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.team-details-head {
+  width: 100%;
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.team-details-head h1 {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 24px;
+  color: #FFEEDC;
+}
+
+.team-details-head-button {
+  width: 24px;
+  height: 24px;
+  border: 0;
+  background: transparent;
+  border-radius: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-details-head-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.team-details-head-button span {
+  font-family: "Unbounded", sans-serif;
+  font-size: 20px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.team-details-profile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-details-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 250px;
+  border: 1px solid #709987;
+  background-color: rgba(112, 153, 135, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Unbounded", sans-serif;
+  font-size: 32px;
+  color: #FFEEDC;
+  font-weight: 700;
+}
+
+.team-details-profile h2 {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 32px;
+  color: #FFEEDC;
+}
+
+.team-details-profile p {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #709987;
+}
+
+.team-details-actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-details-action {
+  min-height: 48px;
+  border-radius: 250px;
+  padding: 0 24px;
+  box-sizing: border-box;
+  font-family: "Unbounded", sans-serif;
+  font-size: 24px;
+  border: 1px solid #55A887;
+}
+
+.team-details-action-call {
+  background-color: #55A887;
+  color: #181818;
+}
+
+.team-details-action-invite {
+  flex: 1;
+  background: transparent;
+  color: #FFEEDC;
+}
+
+.team-details-action-leave {
+  width: 48px;
+  padding: 0;
+  border-color: #D63A3A;
+  color: #D63A3A;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-details-info {
+  width: 100%;
+  border: 1px solid #2d2d2d;
+  border-radius: 16px;
+  background-color: #1b1b1b;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.team-details-info-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.team-details-info-row p {
+  font-family: "Unbounded", sans-serif;
+  font-size: 24px;
+  color: #FFEEDC;
+}
+
+.team-details-info-row p:first-child {
+  color: #709987;
+}
+
+.team-details-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-details-status span {
+  width: 8px;
+  height: 8px;
+  border-radius: 250px;
+  background: #55A887;
+}
+
+.team-details-divider {
+  width: 100%;
+  height: 1px;
+  background: #2d2d2d;
+}
+
+.team-details-description {
+  font-family: "Unbounded", sans-serif;
+  font-size: 24px;
+  color: #FFEEDC;
+  opacity: 0.8;
+}
+
+.team-details-members {
+  width: 100%;
+  border: 1px solid #2d2d2d;
+  border-radius: 16px;
+  background-color: #1b1b1b;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.team-details-members-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.team-details-members-head h3,
+.team-details-members-head span {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 24px;
+  color: #FFEEDC;
+}
+
+.team-member-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.team-member-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-member-left .profile-bubble {
+  width: 48px;
+  height: 48px;
+}
+
+.team-member-left p {
+  font-family: "Unbounded", sans-serif;
+  font-size: 20px;
+  color: #FFEEDC;
+}
+
+.team-member-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-member-right span {
+  min-height: 24px;
+  border-radius: 250px;
+  border: 1px solid #55A887;
+  background: rgba(85, 168, 135, 0.2);
+  color: #55A887;
+  padding: 0 12px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+}
+
+.team-member-right p {
+  font-family: "Unbounded", sans-serif;
+  font-size: 24px;
+  color: #709987;
+}
+
 @keyframes logoutTextFadeIn {
   from {
     color: #FFEEDC;

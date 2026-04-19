@@ -566,3 +566,28 @@ if (settingsLogoutButton) {
     goWithFade("Login.html");
   });
 }
+
+const teamViewButtons = document.querySelectorAll(".teams-action-button-outline");
+teamViewButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    goWithFade("TeamDetails.html");
+  });
+});
+
+const genericNavTargets = document.querySelectorAll("[data-nav-target]");
+genericNavTargets.forEach((item) => {
+  if (
+    item.classList.contains("app-bottom-nav-item") ||
+    item.classList.contains("home-nav-link")
+  ) {
+    return;
+  }
+
+  item.addEventListener("click", () => {
+    const target = item.getAttribute("data-nav-target");
+    if (!target) {
+      return;
+    }
+    goWithFade(target);
+  });
+});
