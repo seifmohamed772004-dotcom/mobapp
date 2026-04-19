@@ -779,7 +779,98 @@ body[lang="ar"],
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+}
+
+.home-create-post {
+  width: 100%;
+  border-radius: 16px;
+  background-color: #181818;
+  border: 1px solid #ffeedc7d;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.home-create-post-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
   gap: 16px;
+  padding-bottom: 16px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(24, 24, 24, 0.1);
+}
+
+.home-create-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 250px;
+  background-color: #55A887;
+  color: #181818;
+  font-family: "Unbounded", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.home-create-post-head p {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.home-create-post-actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.home-create-tools {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.home-create-tool {
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 250px;
+  background-color: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-create-tool img {
+  width: 24px;
+  height: auto;
+}
+
+.home-create-submit {
+  min-width: 88px;
+  min-height: 32px;
+  border: 0;
+  border-radius: 250px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  background-color: #55A887;
+  color: #FFEED9;
+  font-family: "Unbounded", sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1;
 }
 
 .home-brand-row {
@@ -876,7 +967,7 @@ body[lang="ar"],
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 }
 
 .home-feature-head {
@@ -920,32 +1011,33 @@ body[lang="ar"],
   font-size: 12px;
   font-weight: 400;
   color: #FFEEDC;
+  line-height: 1.5;
 }
 
 .home-feature-cta {
-  width: max-content;
+  width: 100%;
   min-height: 24px;
   border: 0;
-  border-radius: 4px;
-  padding: 0 16px;
+  border-radius: 500px;
+  padding: 12px 16px;
   box-sizing: border-box;
   background-color: #181818;
   color: #FFEEDC;
   font-family: "Unbounded", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .home-section {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 }
 
 .home-section h2 {
   font-family: "Choldera Demo", "Unbounded", sans-serif;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 700;
   color: #FFEEDC;
 }
@@ -958,36 +1050,88 @@ body[lang="ar"],
   padding: 24px;
   box-sizing: border-box;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
 }
 
-.home-job-card h3 {
-  font-family: "Unbounded", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
+.home-job-title {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
   color: #FFEEDC;
 }
 
-.home-job-card p {
+.home-job-texts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.home-job-description {
   font-family: "Unbounded", sans-serif;
   font-size: 12px;
   font-weight: 400;
-  color: #709987;
+  line-height: 1;
+  color: #55A887;
+  opacity: 0.7;
 }
 
-.home-job-card span {
-  min-height: 24px;
-  padding: 0 8px;
-  border-radius: 250px;
-  background-color: #55A887;
-  color: #181818;
-  display: flex;
-  align-items: center;
+.home-job-long-description {
+  width: 100%;
   font-family: "Unbounded", sans-serif;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #FFEEDC;
+  opacity: 0.8;
+}
+
+.home-job-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home-job-register {
+  width: 100%;
+  min-height: 40px;
+  border: 0;
+  border-radius: 500px;
+  background-color: #55A887;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.home-job-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.home-job-meta-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.home-job-meta img {
+  width: 12px;
+  height: auto;
+}
+
+.home-job-meta span {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #FFEEDC;
 }
 
 .home-post-card {
@@ -999,7 +1143,7 @@ body[lang="ar"],
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 24px;
 }
 
 .home-post-head {
@@ -1025,14 +1169,24 @@ body[lang="ar"],
 .home-post-head span,
 .home-post-card p {
   font-family: "Unbounded", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
-  color: #709987;
+  color: #FFEEDC;
+  line-height: 1.5;
+}
+
+.home-post-role {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #55A887;
+  line-height: 1;
+  opacity: 0.8;
 }
 
 .home-post-image {
   width: 100%;
-  height: 88px;
+  height: 250px;
   border-radius: 4px;
   object-fit: cover;
 }
@@ -1041,7 +1195,7 @@ body[lang="ar"],
   width: 100%;
   border: 1px solid #709987;
   border-radius: 16px;
-  background-color: #181818;
+  background-color: #55A887;
   padding: 24px;
   box-sizing: border-box;
   display: flex;
@@ -1052,16 +1206,29 @@ body[lang="ar"],
 
 .home-link-card p {
   font-family: "Unbounded", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 1.5;
   font-weight: 500;
   color: #FFEEDC;
 }
 
 .home-link-card span {
   font-family: "Unbounded", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
+  width: min-content;
   font-weight: 500;
-  color: #55A887;
+  color: #FFEEDC;
+}
+
+.home-dark-action {
+  padding: 8px 12px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #181818;
+}
+
+.home-follow-button.home-dark-action {
+  color: #FFEEDC;
 }
 
 .home-user-card {
@@ -1087,6 +1254,23 @@ body[lang="ar"],
   width: 32px;
   height: 32px;
   border-radius: 250px;
+}
+
+.profile-bubble {
+  width: 48px;
+  height: 48px;
+  border-radius: 250px;
+  border: 1px solid #55A887;
+  background-color: rgba(85, 168, 135, 0.25);
+  color: #55A887;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 .home-user-info p {
@@ -1115,3 +1299,4 @@ body[lang="ar"],
   font-size: 12px;
   font-weight: 600;
 }
+
