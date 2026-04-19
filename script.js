@@ -274,6 +274,82 @@ if (currentPage === "studio-call") {
   }
 }
 
+if (currentPage === "create-team") {
+  const joinButtons = document.querySelectorAll("[data-join-toggle]");
+  joinButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const mode = button.getAttribute("data-join-toggle");
+      joinButtons.forEach((item) => {
+        const isActive = item.getAttribute("data-join-toggle") === mode;
+        item.classList.toggle("create-team-join-btn-active", isActive);
+        item.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    });
+  });
+
+  const paymentButtons = document.querySelectorAll("[data-payment]");
+  paymentButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      paymentButtons.forEach((item) => {
+        item.classList.toggle("create-team-segment-btn-active", item === button);
+      });
+    });
+  });
+
+  const visibilityRadios = document.querySelectorAll("[data-visibility]");
+  visibilityRadios.forEach((button) => {
+    button.addEventListener("click", () => {
+      visibilityRadios.forEach((item) => {
+        const isActive = item === button;
+        item.classList.toggle("create-team-radio-active", isActive);
+        item.setAttribute("aria-checked", isActive ? "true" : "false");
+      });
+    });
+  });
+
+  const skillContainer = document.querySelector("#ctSkillActive");
+  const skillInput = document.querySelector("#ct-skill");
+  const skillAdd = document.querySelector("#ctSkillAdd");
+
+  if (skillContainer) {
+    skillContainer.addEventListener("click", (event) => {
+      const removeBtn = event.target.closest(".create-team-chip-remove");
+      if (!removeBtn) {
+        return;
+      }
+      event.preventDefault();
+      event.stopPropagation();
+      const chip = removeBtn.closest(".create-team-chip");
+      if (chip) {
+        chip.remove();
+      }
+    });
+  }
+
+  if (skillAdd && skillInput && skillContainer) {
+    skillAdd.addEventListener("click", () => {
+      const value = skillInput.value.trim();
+      if (!value) {
+        return;
+      }
+
+      const chip = document.createElement("article");
+      chip.className = "create-team-chip create-team-chip-active";
+      const label = document.createElement("span");
+      label.textContent = value;
+      const removeBtn = document.createElement("button");
+      removeBtn.className = "create-team-chip-remove pressable";
+      removeBtn.type = "button";
+      removeBtn.setAttribute("aria-label", "Remove skill");
+      removeBtn.textContent = "×";
+      chip.appendChild(label);
+      chip.appendChild(removeBtn);
+      skillContainer.appendChild(chip);
+      skillInput.value = "";
+    });
+  }
+}
+
 if (currentPage === "cree-ai") {
   const menuOpenButtons = document.querySelectorAll("[data-cree-menu-open]");
   const sidebar = document.querySelector("#creeSidebar");

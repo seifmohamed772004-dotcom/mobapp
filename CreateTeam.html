@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create a Team</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body class="page-enter" data-page="create-team">
+  <main class="create-team-shell">
+    <section class="home-header reveal create-team-header">
+      <article class="home-brand-row">
+        <button class="home-top-button pressable" type="button" aria-label="Open menu" data-menu-open>
+          <img src="/Assets/burger menu icon.png" alt="Burger menu icon">
+        </button>
+        <img class="home-brand-logo" src="/Assets/Login Logo.png" alt="Creestudios logo">
+        <button class="home-top-button pressable" type="button" aria-label="Change language">
+          <img src="/Assets/language globe icon.png" alt="Globe icon">
+        </button>
+      </article>
+    </section>
+
+    <section class="create-team-content">
+      <article class="create-team-hero reveal">
+        <button class="create-team-back pressable" type="button" aria-label="Back to teams" data-nav-target="Teams.html">
+          <img src="/Assets/Arrow Left Icon (Onboarding).png" alt="Back icon">
+        </button>
+        <article class="title-sub-stack">
+          <h1 class="create-team-page-title">CREATE A TEAM</h1>
+          <p class="create-team-page-sub">Fill out the details to request your team membership.</p>
+        </article>
+        <article class="create-team-join-row">
+          <button class="create-team-join-btn pressable" type="button" data-join-toggle="open" aria-pressed="false">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M8 11V7a4 4 0 118 0v4M6 11h12v10H6V11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+            <span>Open to Join</span>
+          </button>
+          <button class="create-team-join-btn create-team-join-btn-active pressable" type="button" data-join-toggle="invite" aria-pressed="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Invite Only</span>
+          </button>
+        </article>
+      </article>
+
+      <section class="create-team-block reveal">
+        <article class="title-sub-stack">
+          <h2 class="create-team-block-title">BASIC INFORMATION</h2>
+          <p class="create-team-block-sub">Define the core job details.</p>
+        </article>
+        <article class="create-team-field">
+          <label for="ct-job-title">JOB TITLE *</label>
+          <input id="ct-job-title" type="text" placeholder="e.g. Senior Product Designer" aria-required="true">
+        </article>
+        <article class="create-team-field">
+          <label for="ct-category">CATEGORY *</label>
+          <input id="ct-category" type="text" placeholder="Select Category" aria-required="true">
+        </article>
+        <article class="create-team-field">
+          <label for="ct-company">COMPANY / TEAM NAME *</label>
+          <input id="ct-company" type="text" placeholder="e.g. Studio Name" aria-required="true">
+        </article>
+        <article class="create-team-field">
+          <label for="ct-location">LOCATION</label>
+          <input id="ct-location" type="text" placeholder="City, State or Remote">
+        </article>
+      </section>
+
+      <section class="create-team-block reveal">
+        <article class="title-sub-stack">
+          <h2 class="create-team-block-title">JOB DESCRIPTION</h2>
+          <p class="create-team-block-sub">Describe the role clearly.</p>
+        </article>
+        <article class="create-team-field">
+          <label for="ct-job-desc">JOB DESCRIPTION *</label>
+          <article class="create-team-rich">
+            <article class="create-team-rich-toolbar">
+              <button class="create-team-rich-btn pressable" type="button" aria-label="Bold">B</button>
+              <button class="create-team-rich-btn pressable" type="button" aria-label="Italic">I</button>
+              <button class="create-team-rich-btn pressable" type="button" aria-label="Underline">U</button>
+              <button class="create-team-rich-btn pressable" type="button" aria-label="List">≡</button>
+            </article>
+            <textarea id="ct-job-desc" rows="6" placeholder="Describe the role..." aria-required="true"></textarea>
+          </article>
+        </article>
+        <article class="create-team-list-card">
+          <p class="create-team-list-title">Responsibilities</p>
+          <ul>
+            <li>Lead end-to-end product design across web and mobile.</li>
+            <li>Collaborate with engineering and product on delivery.</li>
+            <li>Maintain design quality and consistency.</li>
+          </ul>
+        </article>
+        <article class="create-team-list-card">
+          <p class="create-team-list-title">Requirements</p>
+          <ul>
+            <li>5+ years of product design experience.</li>
+            <li>Strong portfolio demonstrating systems thinking.</li>
+            <li>Excellent communication skills.</li>
+          </ul>
+        </article>
+        <article class="create-team-field">
+          <label for="ct-other">Other Information</label>
+          <textarea id="ct-other" rows="4" placeholder="Provide any other details or requirements..."></textarea>
+        </article>
+      </section>
+
+      <section class="create-team-block reveal">
+        <article class="title-sub-stack">
+          <h2 class="create-team-block-title">REQUIRED SKILLS</h2>
+          <p class="create-team-block-sub">Specify the skills you're looking for.</p>
+        </article>
+        <article class="create-team-skill-input-row">
+          <article class="create-team-field create-team-field-inline">
+            <label for="ct-skill">ADD SKILL *</label>
+            <input id="ct-skill" type="text" placeholder="Type a skill" aria-required="true">
+          </article>
+          <button id="ctSkillAdd" class="create-team-skill-add pressable" type="button" aria-label="Add skill">
+            <span aria-hidden="true">+</span>
+          </button>
+        </article>
+        <article id="ctSkillActive" class="create-team-chip-row">
+          <article class="create-team-chip create-team-chip-active">
+            <span>Figma</span>
+            <button class="create-team-chip-remove pressable" type="button" aria-label="Remove Figma">×</button>
+          </article>
+          <article class="create-team-chip create-team-chip-active">
+            <span>Lottie</span>
+            <button class="create-team-chip-remove pressable" type="button" aria-label="Remove Lottie">×</button>
+          </article>
+          <article class="create-team-chip create-team-chip-active">
+            <span>Prototyping</span>
+            <button class="create-team-chip-remove pressable" type="button" aria-label="Remove Prototyping">×</button>
+          </article>
+        </article>
+        <article class="create-team-chip-row create-team-chip-row-suggest">
+          <button class="create-team-chip create-team-chip-suggest pressable" type="button">User Research</button>
+          <button class="create-team-chip create-team-chip-suggest pressable" type="button">Design Systems</button>
+          <button class="create-team-chip create-team-chip-suggest pressable" type="button">Interaction Design</button>
+          <button class="create-team-chip create-team-chip-suggest pressable" type="button">Wireframing</button>
+        </article>
+      </section>
+
+      <section class="create-team-block reveal">
+        <article class="title-sub-stack">
+          <h2 class="create-team-block-title">BUDGET &amp; TIMELINE</h2>
+          <p class="create-team-block-sub">Define the estimated timeline and budget.</p>
+        </article>
+        <p class="create-team-field-label">Payment Type</p>
+        <article class="create-team-segment" role="group" aria-label="Payment type">
+          <button class="create-team-segment-btn create-team-segment-btn-active pressable" type="button" data-payment="hourly">Hourly</button>
+          <button class="create-team-segment-btn pressable" type="button" data-payment="monthly">Monthly</button>
+          <button class="create-team-segment-btn pressable" type="button" data-payment="fixed">Fixed Price</button>
+        </article>
+        <article class="create-team-salary-row">
+          <article class="create-team-field">
+            <label for="ct-sal-min">Minimum</label>
+            <article class="create-team-currency-wrap">
+              <span>$</span>
+              <input id="ct-sal-min" type="text" inputmode="numeric" value="80000">
+            </article>
+          </article>
+          <article class="create-team-field">
+            <label for="ct-sal-max">Maximum</label>
+            <article class="create-team-currency-wrap">
+              <span>$</span>
+              <input id="ct-sal-max" type="text" inputmode="numeric" value="160000">
+            </article>
+          </article>
+        </article>
+        <article class="create-team-field">
+          <label for="ct-timeline">ESTIMATED TIMELINE</label>
+          <input id="ct-timeline" type="text" placeholder="e.g. 3 months">
+        </article>
+        <article class="create-team-field">
+          <label for="ct-start">START DATE</label>
+          <article class="create-team-input-icon-row">
+            <input id="ct-start" type="text" placeholder="MM / DD / YYYY">
+            <img src="/Assets/calendar Icon.png" alt="Calendar icon">
+          </article>
+        </article>
+      </section>
+
+      <section class="create-team-block reveal">
+        <article class="title-sub-stack">
+          <h2 class="create-team-block-title">APPLICATION REQUIREMENTS</h2>
+          <p class="create-team-block-sub">Define what applicants need to submit.</p>
+        </article>
+        <article class="create-team-switch-row">
+          <article>
+            <h3>Require Portfolio</h3>
+          </article>
+          <button class="ios-switch is-on pressable" type="button" role="switch" data-ios-switch aria-label="Require portfolio" aria-checked="true"></button>
+        </article>
+        <article class="create-team-switch-row">
+          <article>
+            <h3>Require Resume</h3>
+          </article>
+          <button class="ios-switch is-on pressable" type="button" role="switch" data-ios-switch aria-label="Require resume" aria-checked="true"></button>
+        </article>
+        <article class="create-team-switch-row">
+          <article>
+            <h3>Require Cover Letter</h3>
+          </article>
+          <button class="ios-switch pressable" type="button" role="switch" data-ios-switch aria-label="Require cover letter" aria-checked="false"></button>
+        </article>
+      </section>
+
+      <section class="create-team-block reveal">
+        <article class="title-sub-stack">
+          <h2 class="create-team-block-title">RECOMMENDATIONS</h2>
+          <p class="create-team-block-sub">Let us find the right fit for you.</p>
+        </article>
+        <article class="create-team-rec-card pressable">
+          <article class="create-team-rec-spine" aria-hidden="true"></article>
+          <article class="create-team-rec-main">
+            <header class="create-team-rec-tab">
+              <img src="/Assets/Cree Ai Nav.png" alt="Cree AI icon">
+              <span>CREE AI SUGGESTION</span>
+            </header>
+            <article class="create-team-rec-body">
+            <span class="profile-bubble create-team-rec-avatar" aria-hidden="true">US</span>
+            <article class="create-team-rec-info">
+              <p class="create-team-rec-title">UX/UI SPECIALISTS</p>
+              <article class="create-team-rec-members-row">
+                <img src="/Assets/attendees Icon.png" alt="Members icon">
+                <span>16 Members</span>
+              </article>
+            </article>
+            <button class="create-team-hire-btn pressable" type="button">HIRE</button>
+            </article>
+          </article>
+        </article>
+        <article class="create-team-rec-card pressable">
+          <article class="create-team-rec-spine" aria-hidden="true"></article>
+          <article class="create-team-rec-main">
+            <header class="create-team-rec-tab">
+              <img src="/Assets/Cree Ai Nav.png" alt="Cree AI icon">
+              <span>CREE AI SUGGESTION</span>
+            </header>
+            <article class="create-team-rec-body">
+            <span class="profile-bubble create-team-rec-avatar" aria-hidden="true">MG</span>
+            <article class="create-team-rec-info">
+              <p class="create-team-rec-title">MOTION DESIGN</p>
+              <article class="create-team-rec-members-row">
+                <img src="/Assets/attendees Icon.png" alt="Members icon">
+                <span>8 Members</span>
+              </article>
+            </article>
+            <button class="create-team-hire-btn pressable" type="button">HIRE</button>
+            </article>
+          </article>
+        </article>
+        <button class="create-team-browse pressable" type="button">BROWSE FRIENDS LIST</button>
+      </section>
+
+      <section class="create-team-block reveal">
+        <article class="title-sub-stack">
+          <h2 class="create-team-block-title">PUBLISH &amp; VISIBILITY</h2>
+          <p class="create-team-block-sub">Finalize and publish the post.</p>
+        </article>
+        <article class="create-team-field create-team-tags-field">
+          <label for="ct-tags">Tags (max 5)</label>
+          <article class="create-team-tags-input-row">
+            <input id="ct-tags" type="text" placeholder="Add tags">
+            <button class="create-team-tag-plus pressable" type="button" aria-label="Add tag">+</button>
+          </article>
+        </article>
+        <p class="create-team-field-label">Visibility Settings</p>
+        <article class="create-team-radio-panel" role="radiogroup" aria-label="Visibility">
+          <button class="create-team-radio create-team-radio-active pressable" type="button" role="radio" data-visibility="public" aria-checked="true">
+            <span class="create-team-radio-dot"></span>
+            <p>Public</p>
+          </button>
+          <button class="create-team-radio pressable" type="button" role="radio" data-visibility="community" aria-checked="false">
+            <span class="create-team-radio-dot"></span>
+            <p>Community</p>
+          </button>
+          <button class="create-team-radio pressable" type="button" role="radio" data-visibility="private" aria-checked="false">
+            <span class="create-team-radio-dot"></span>
+            <p>Private</p>
+          </button>
+        </article>
+        <article class="create-team-switch-row">
+          <article>
+            <h3>Promote this post</h3>
+          </article>
+          <button class="ios-switch pressable" type="button" role="switch" data-ios-switch aria-label="Promote this post" aria-checked="false"></button>
+        </article>
+      </section>
+
+      <footer class="create-team-footer reveal">
+        <button class="create-team-publish pressable" type="button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5v14M5 12l7-7 7 7" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Publish Job Post</span>
+        </button>
+        <p class="create-team-legal">By clicking publish, you agree to our Terms and Conditions.</p>
+      </footer>
+    </section>
+  </main>
+
+  <section class="home-nav-overlay" aria-label="Navigation menu">
+    <video class="home-nav-video" autoplay muted loop playsinline>
+      <source src="/Assets/Background Video.mp4" type="video/mp4">
+    </video>
+    <article class="home-nav-dark-layer"></article>
+    <article class="home-nav-content">
+      <img class="home-nav-logo" src="/Assets/Login Logo.png" alt="Creestudios logo">
+      <nav class="home-nav-links" aria-label="Overlay links">
+        <button class="home-nav-link pressable" type="button">PROFILE</button>
+        <button class="home-nav-link pressable" type="button" data-nav-target="Settings.html">SETTINGS</button>
+        <button class="home-nav-link pressable" type="button" data-nav-target="CreeAI.html">CREE AI</button>
+        <button class="home-nav-link pressable" type="button">FRIEND LINKS</button>
+        <button class="home-nav-link pressable" type="button" data-nav-target="Settings.html">SETTINGS</button>
+        <button class="home-nav-link pressable" type="button">NOTIFICATIONS</button>
+        <button class="home-nav-link pressable" type="button">ADD PAGE</button>
+        <button class="home-nav-link pressable" type="button">REPORTS</button>
+      </nav>
+      <button id="homeNavBack" class="home-nav-back pressable" type="button" aria-label="Close menu">
+        <img src="/Assets/cancel icon.png" alt="Cancel icon">
+      </button>
+    </article>
+    <footer class="home-nav-footer">
+      <button class="home-nav-logout pressable" type="button">LOGOUT</button>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
