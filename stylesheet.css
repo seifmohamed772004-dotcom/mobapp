@@ -49,7 +49,7 @@ body {
 
 body.page-enter {
   opacity: 0;
-  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 body.page-enter.is-visible {
@@ -58,7 +58,7 @@ body.page-enter.is-visible {
 
 body.page-exit {
   opacity: 0;
-  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html[lang="ar"] body,
@@ -411,7 +411,7 @@ body[lang="ar"],
 }
 
 .pressable {
-  transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, opacity;
   transform: scale(1);
 }
@@ -432,7 +432,7 @@ body[lang="ar"],
 .reveal {
   opacity: 0;
   transform: translateY(12px);
-  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.2s cubic-bezier(0.22, 1, 0.36, 1), transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform, opacity;
 }
 
@@ -458,10 +458,18 @@ body[lang="ar"],
   display: none;
   flex-direction: column;
   gap: 24px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.2s cubic-bezier(0.22, 1, 0.36, 1), transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .onboarding-step.is-active {
   display: flex;
+}
+
+.onboarding-step.is-entered {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .onboarding-progress {
@@ -475,14 +483,44 @@ body[lang="ar"],
 .progress-segment {
   flex: 1;
   height: 4px;
+  position: relative;
+  overflow: hidden;
   border-radius: 250px;
-  background-color: #709987;
-  opacity: 0.4;
+  background-color: rgba(112, 153, 135, 0.4);
 }
 
 .progress-segment.is-active {
+  background-color: rgba(112, 153, 135, 0.4);
+}
+
+.progress-segment::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: left center;
+  transform: scaleX(0);
   background-color: #55A887;
-  opacity: 1;
+}
+
+.progress-segment.is-active::after {
+  transform: scaleX(1);
+}
+
+.progress-segment.is-current::after {
+  transform: scaleX(0);
+  animation: progressFill 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes progressFill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 .onboarding-head {
@@ -504,8 +542,8 @@ body[lang="ar"],
   font-family: "Unbounded", sans-serif;
   font-size: 12px;
   font-weight: 400;
-  color: #709987;
-  line-height: 1;
+  color: #709987a5;
+  line-height: 1.5;
 }
 
 .option-list {
@@ -536,6 +574,7 @@ body[lang="ar"],
   height: 56px;
   border-radius: 16px;
   background-color: #181818;
+  color: #55A887;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -543,8 +582,8 @@ body[lang="ar"],
 }
 
 .onboard-icon img {
-  width: 20px;
-  height: 20px;
+  width: 48px;
+  height: auto;
 }
 
 .onboard-card-text {
@@ -580,6 +619,18 @@ body[lang="ar"],
 
 .onboard-card.is-selected {
   border-color: #55A887;
+  background-color: #55A887;
+  color: #FFEEDC;
+}
+
+.onboard-card.is-selected .onboard-card-text,
+.onboard-card.is-selected .onboard-card-title,
+.onboard-card.is-selected .onboard-card-subtitle {
+  color: #FFEEDC;
+}
+
+.onboard-card.is-selected .onboard-icon {
+  color: #FFEEDC;
 }
 
 .onboarding-selected-count {
@@ -603,21 +654,22 @@ body[lang="ar"],
   border-radius: 250px;
   background-color: #181818;
   color: #FFEEDC;
-  padding: 8px 16px;
+  padding: 12px 24px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Unbounded", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 300;
   line-height: 1;
   cursor: pointer;
 }
 
 .interest-chip.is-selected {
   border-color: #55A887;
-  color: #55A887;
+  background-color: #55A887;
+  color: #FFEEDC;
 }
 
 .interest-chip-full {
@@ -634,8 +686,8 @@ body[lang="ar"],
 }
 
 .onboarding-back {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border: 1px solid #709987;
   border-radius: 4px;
   background-color: #181818;
@@ -647,8 +699,7 @@ body[lang="ar"],
 }
 
 .onboarding-back img {
-  width: 20px;
-  height: 20px;
+  width: 16px;
 }
 
 .onboarding-continue {
@@ -659,8 +710,10 @@ body[lang="ar"],
   background-color: #55A887;
   color: #FFEEDC;
   font-family: "Unbounded", sans-serif;
-  font-size: 32px;
+  font-size: 16px;
   font-weight: 700;
+  padding: 16px 24px;
+  box-sizing: border-box;
   line-height: 1;
   cursor: pointer;
 }

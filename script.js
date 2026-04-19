@@ -7,7 +7,7 @@ const goWithFade = (nextPath) => {
   document.body.classList.add("page-exit");
   window.setTimeout(() => {
     window.location.href = nextPath;
-  }, 450);
+  }, 200);
 };
 
 const currentPage = document.body.dataset.page;
@@ -46,15 +46,13 @@ if (currentPage === "onboarding") {
   };
 
   let activeStep = 1;
+  let isAnimatingStep = false;
 
   const renderStep = () => {
     steps.forEach((step) => {
       const stepNumber = Number(step.dataset.step);
       const isActive = stepNumber === activeStep;
       step.classList.toggle("is-active", isActive);
-      if (isActive) {
-        step.classList.add("is-visible");
-      }
     });
   };
 
@@ -84,8 +82,48 @@ if (currentPage === "onboarding") {
   };
 
   const moveToStep = (stepNumber) => {
+    if (isAnimatingStep || stepNumber === activeStep) {
+      return;
+    }
+
+    const previousStep = steps.find((step) => Number(step.dataset.step) === activeStep);
+    const nextStep = steps.find((step) => Number(step.dataset.step) === stepNumber);
+    if (!nextStep) {
+      return;
+    }
+
+    isAnimatingStep = true;
+    if (previousStep) {
+      previousStep.classList.remove("is-entered");
+    }
+
+    window.setTimeout(() => {
+      if (previousStep) {
+        previousStep.classList.remove("is-active");
+      }
+
+      activeStep = stepNumber;
+      nextStep.classList.add("is-active");
+      window.requestAnimationFrame(() => {
+        nextStep.classList.add("is-entered");
+      });
+
+      applySelectedStyles();
+      renderControls();
+
+      window.setTimeout(() => {
+        isAnimatingStep = false;
+      }, 200);
+    }, 200);
+  };
+
+  const initializeOnboardingStep = (stepNumber) => {
     activeStep = stepNumber;
     renderStep();
+    const initialStep = steps.find((step) => Number(step.dataset.step) === stepNumber);
+    if (initialStep) {
+      initialStep.classList.add("is-entered");
+    }
     applySelectedStyles();
     renderControls();
   };
@@ -130,6 +168,9 @@ if (currentPage === "onboarding") {
 
   if (backButton) {
     backButton.addEventListener("click", () => {
+      if (isAnimatingStep) {
+        return;
+      }
       if (activeStep === 1) {
         goWithFade("SignUp.html");
       } else {
@@ -140,19 +181,19 @@ if (currentPage === "onboarding") {
 
   if (continueButton) {
     continueButton.addEventListener("click", () => {
-      if (continueButton.disabled) {
+      if (continueButton.disabled || isAnimatingStep) {
         return;
       }
 
       if (activeStep < 3) {
         moveToStep(activeStep + 1);
       } else {
-        goWithFade("Login.html");
+        goWithFade("Home.html");
       }
     });
   }
 
-  moveToStep(1);
+  initializeOnboardingStep(1);
 }
 
 const pressables = document.querySelectorAll(".pressable");
