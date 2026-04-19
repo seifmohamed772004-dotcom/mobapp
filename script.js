@@ -228,7 +228,7 @@ if (currentPage === "login" || currentPage === "signup") {
   }
 }
 
-if (currentPage === "home") {
+{
   const searchWrap = document.querySelector(".home-search-wrap");
   const searchInput = searchWrap ? searchWrap.querySelector("input") : null;
   const searchPanel = document.querySelector(".home-search-panel");
@@ -240,20 +240,25 @@ if (currentPage === "home") {
   const navLogoutButton = document.querySelector(".home-nav-logout");
   const navFooter = document.querySelector(".home-nav-footer");
 
-  if (searchWrap && searchPanel) {
-    const openSearchPanel = () => {
-      searchPanel.classList.add("is-open");
-      window.requestAnimationFrame(() => {
-        if (searchPanelInput) {
-          searchPanelInput.focus();
-        }
-      });
-    };
+  const openSearchPanel = () => {
+    if (!searchPanel) {
+      return;
+    }
+    searchPanel.classList.add("is-open");
+    window.requestAnimationFrame(() => {
+      if (searchPanelInput) {
+        searchPanelInput.focus();
+      }
+    });
+  };
 
-    const closeSearchPanel = () => {
+  const closeSearchPanel = () => {
+    if (searchPanel) {
       searchPanel.classList.remove("is-open");
-    };
+    }
+  };
 
+  if (searchWrap && searchPanel) {
     searchWrap.addEventListener("click", openSearchPanel);
     if (searchInput) {
       searchInput.addEventListener("focus", openSearchPanel);
@@ -261,53 +266,55 @@ if (currentPage === "home") {
     if (searchClose) {
       searchClose.addEventListener("click", closeSearchPanel);
     }
+  }
 
-    const openNavOverlay = () => {
-      closeSearchPanel();
-      if (navOverlay) {
-        navOverlay.classList.add("is-open");
-      }
-    };
+  const openNavOverlay = () => {
+    closeSearchPanel();
+    if (navOverlay) {
+      navOverlay.classList.add("is-open");
+    }
+  };
 
-    const closeNavOverlay = () => {
-      if (navOverlay) {
-        navOverlay.classList.remove("is-open");
-      }
-    };
+  const closeNavOverlay = () => {
+    if (navOverlay) {
+      navOverlay.classList.remove("is-open");
+    }
+  };
 
+  if (menuOpenButtons.length > 0 && navOverlay) {
     menuOpenButtons.forEach((button) => {
       button.addEventListener("click", openNavOverlay);
     });
+  }
 
-    if (navBackButton) {
-      navBackButton.addEventListener("click", closeNavOverlay);
-    }
+  if (navBackButton) {
+    navBackButton.addEventListener("click", closeNavOverlay);
+  }
 
-    if (navLogoutButton && navFooter) {
-      let logoutArmed = false;
-      let logoutTimer = null;
+  if (navLogoutButton && navFooter) {
+    let logoutArmed = false;
+    let logoutTimer = null;
 
-      const disarmLogout = () => {
-        logoutArmed = false;
-        navFooter.classList.remove("is-logout-armed");
-        if (logoutTimer) {
-          window.clearTimeout(logoutTimer);
-          logoutTimer = null;
-        }
-      };
+    const disarmLogout = () => {
+      logoutArmed = false;
+      navFooter.classList.remove("is-logout-armed");
+      if (logoutTimer) {
+        window.clearTimeout(logoutTimer);
+        logoutTimer = null;
+      }
+    };
 
-      navLogoutButton.addEventListener("click", () => {
-        if (!logoutArmed) {
-          logoutArmed = true;
-          navFooter.classList.add("is-logout-armed");
-          logoutTimer = window.setTimeout(disarmLogout, 3000);
-          return;
-        }
+    navLogoutButton.addEventListener("click", () => {
+      if (!logoutArmed) {
+        logoutArmed = true;
+        navFooter.classList.add("is-logout-armed");
+        logoutTimer = window.setTimeout(disarmLogout, 3000);
+        return;
+      }
 
-        disarmLogout();
-        goWithFade("Login.html");
-      });
-    }
+      disarmLogout();
+      goWithFade("Login.html");
+    });
   }
 }
 
@@ -383,3 +390,57 @@ likeButtons.forEach((button) => {
     icon.alt = isLiked ? "Liked icon" : "Like icon";
   });
 });
+
+const overlayNavLinks = document.querySelectorAll(".home-nav-link");
+overlayNavLinks.forEach((item) => {
+  item.addEventListener("click", () => {
+    const target = item.getAttribute("data-nav-target");
+    if (target) {
+      const currentPath = window.location.pathname.toLowerCase();
+      const isCurrentPage = currentPath.endsWith("/" + target.toLowerCase()) || currentPath.endsWith(target.toLowerCase());
+      if (!isCurrentPage) {
+        goWithFade(target);
+        return;
+      }
+    }
+
+    overlayNavLinks.forEach((link) => link.classList.remove("home-nav-link-active"));
+    item.classList.add("home-nav-link-active");
+  });
+});
+
+const bottomNavItems = document.querySelectorAll(".app-bottom-nav-item[data-nav-target]");
+bottomNavItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    const target = item.getAttribute("data-nav-target");
+    if (!target) {
+      return;
+    }
+
+    const currentPath = window.location.pathname.toLowerCase();
+    const isCurrentPage = currentPath.endsWith("/" + target.toLowerCase()) || currentPath.endsWith(target.toLowerCase());
+
+    if (isCurrentPage) {
+      bottomNavItems.forEach((link) => link.classList.remove("app-bottom-nav-item-active"));
+      item.classList.add("app-bottom-nav-item-active");
+      return;
+    }
+
+    goWithFade(target);
+  });
+});
+
+const iosSwitches = document.querySelectorAll("[data-ios-switch]");
+iosSwitches.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const isOn = toggle.classList.toggle("is-on");
+    toggle.setAttribute("aria-checked", isOn ? "true" : "false");
+  });
+});
+
+const settingsLogoutButton = document.querySelector("[data-settings-logout]");
+if (settingsLogoutButton) {
+  settingsLogoutButton.addEventListener("click", () => {
+    goWithFade("Login.html");
+  });
+}

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body class="page-enter" data-page="settings">
+  <main class="settings-shell">
+    <section class="home-header reveal">
+      <article class="home-brand-row">
+        <button class="home-top-button pressable" type="button" aria-label="Open menu" data-menu-open>
+          <img src="/Assets/burger menu icon.png" alt="Burger menu icon">
+        </button>
+        <img class="home-brand-logo" src="/Assets/Login Logo.png" alt="Creestudios logo">
+        <button class="home-top-button pressable" type="button" aria-label="Change language">
+          <img src="/Assets/language globe icon.png" alt="Globe icon">
+        </button>
+      </article>
+
+      <article class="settings-pill-row">
+        <button class="settings-pill-main pressable" type="button">
+          <img src="/Assets/marker icon.png" alt="Settings icon">
+          <span>SETTINGS</span>
+        </button>
+        <button class="settings-pill-icon pressable" type="button" aria-label="Filter settings">
+          <img src="/Assets/analytics app.png" alt="Filter icon">
+        </button>
+      </article>
+    </section>
+
+    <section class="settings-content">
+      <section class="settings-group reveal">
+        <h2>NOTIFICATION PREFERENCES</h2>
+        <p>Manage how and where you receive alerts</p>
+
+        <article class="settings-switch-row">
+          <article>
+            <h3>Following</h3>
+            <p>Posts from followed users and communities</p>
+          </article>
+          <button class="ios-switch is-on pressable" type="button" role="switch" data-ios-switch aria-label="Toggle following notifications" aria-checked="true"></button>
+        </article>
+        <article class="settings-switch-row">
+          <article>
+            <h3>Job Opportunities</h3>
+            <p>New jobs that match your interests and profile</p>
+          </article>
+          <button class="ios-switch is-on pressable" type="button" role="switch" data-ios-switch aria-label="Toggle job opportunities notifications" aria-checked="true"></button>
+        </article>
+        <article class="settings-switch-row">
+          <article>
+            <h3>Community Updates</h3>
+            <p>New posts, comments, and mentions in your feed</p>
+          </article>
+          <button class="ios-switch is-on pressable" type="button" role="switch" data-ios-switch aria-label="Toggle community update notifications" aria-checked="true"></button>
+        </article>
+        <article class="settings-switch-row">
+          <article>
+            <h3>Payment Alerts</h3>
+            <p>Platform fees, invoices, and billing reminders</p>
+          </article>
+          <button class="ios-switch is-on pressable" type="button" role="switch" data-ios-switch aria-label="Toggle payment alerts notifications" aria-checked="true"></button>
+        </article>
+        <article class="settings-switch-row">
+          <article>
+            <h3>Platform Announcements</h3>
+            <p>Major feature releases and policy updates</p>
+          </article>
+          <button class="ios-switch pressable" type="button" role="switch" data-ios-switch aria-label="Toggle platform announcements notifications" aria-checked="false"></button>
+        </article>
+      </section>
+
+      <section class="settings-group reveal">
+        <h2>PRIVACY &amp; VISIBILITY</h2>
+        <p>Manage who can interact with your profile and content</p>
+
+        <details class="settings-dropdown">
+          <summary><span>Profile Visibility</span><span>Public</span></summary>
+          <article><p>Choose who can view your profile and portfolio details.</p></article>
+        </details>
+        <details class="settings-dropdown">
+          <summary><span>Portfolio Visibility</span><span>Everyone</span></summary>
+          <article><p>Control who sees your projects and case studies.</p></article>
+        </details>
+        <details class="settings-dropdown">
+          <summary><span>Activity Visibility</span><span>Connections</span></summary>
+          <article><p>Hide or show your interactions and engagement activity.</p></article>
+        </details>
+        <details class="settings-dropdown">
+          <summary><span>Who Can Message Me</span><span>Everyone</span></summary>
+          <article><p>Limit direct messages to specific groups of users.</p></article>
+        </details>
+        <details class="settings-dropdown">
+          <summary><span>Blocked Users</span><span>2 users</span></summary>
+          <article><p>Review and update your blocked users list.</p></article>
+        </details>
+        <details class="settings-dropdown">
+          <summary><span>Data Sharing Permissions</span><span>Limited</span></summary>
+          <article><p>Manage what platform data can be shared externally.</p></article>
+        </details>
+      </section>
+
+      <section class="settings-group reveal">
+        <h2>LANGUAGE &amp; REGION</h2>
+        <p>Control language and regional formatting preferences</p>
+
+        <details class="settings-dropdown">
+          <summary><span>Language</span><span>English (US)</span></summary>
+          <article><p>Select your preferred interface language.</p></article>
+        </details>
+        <details class="settings-dropdown">
+          <summary><span>Region</span><span>Egypt</span></summary>
+          <article><p>Set region for location-based opportunities and trends.</p></article>
+        </details>
+        <details class="settings-dropdown">
+          <summary><span>Time Zone</span><span>GMT +2</span></summary>
+          <article><p>Used for scheduling and notifications delivery time.</p></article>
+        </details>
+        <details class="settings-dropdown">
+          <summary><span>Date Format</span><span>DD/MM/YYYY</span></summary>
+          <article><p>Choose your preferred date format.</p></article>
+        </details>
+        <details class="settings-dropdown">
+          <summary><span>Currency Preferences</span><span>USD, EGP</span></summary>
+          <article><p>Set currencies used in jobs and pricing modules.</p></article>
+        </details>
+      </section>
+
+      <section class="settings-group reveal">
+        <h2>PAYMENT &amp; BILLING</h2>
+        <p>Manage payment methods and privacy protections</p>
+
+        <article class="settings-payment-card">
+          <p>SAVED PAYMENT METHODS</p>
+          <article class="settings-payment-row">
+            <span>**** **** **** 4242</span>
+            <button class="settings-mini-action pressable" type="button">DEFAULT</button>
+          </article>
+          <button class="settings-mini-action pressable" type="button">+ Add Payment Method</button>
+        </article>
+
+        <details class="settings-dropdown">
+          <summary><span>Billing Address</span><span>Saved</span></summary>
+          <article><p>Manage your billing address details.</p></article>
+        </details>
+        <details class="settings-dropdown">
+          <summary><span>Withdrawal Methods</span><span>1 linked</span></summary>
+          <article><p>Set up or edit bank/account withdrawal options.</p></article>
+        </details>
+        <details class="settings-dropdown">
+          <summary><span>Tax Information</span><span>Verified</span></summary>
+          <article><p>Review submitted tax information and status.</p></article>
+        </details>
+        <details class="settings-dropdown">
+          <summary><span>Payment History</span><span>View all</span></summary>
+          <article><p>See your full transactions and invoices history.</p></article>
+        </details>
+      </section>
+
+      <section class="settings-group reveal">
+        <h2>APP PREFERENCES &amp; SUPPORT</h2>
+        <p>Configure platform behavior and troubleshooting options</p>
+
+        <article class="settings-switch-row">
+          <article>
+            <h3>Dark Mode</h3>
+            <p>Switch app theme appearance</p>
+          </article>
+          <button class="ios-switch is-on pressable" type="button" role="switch" data-ios-switch aria-label="Toggle dark mode" aria-checked="true"></button>
+        </article>
+        <details class="settings-dropdown">
+          <summary><span>Accessibility Options</span><span>Medium</span></summary>
+          <article><p>Adjust contrast, text size, and motion settings.</p></article>
+        </details>
+        <details class="settings-dropdown">
+          <summary><span>Help Center</span><span>Support</span></summary>
+          <article><p>Get help documentation and support resources.</p></article>
+        </details>
+        <details class="settings-dropdown">
+          <summary><span>Report a Problem</span><span>Open form</span></summary>
+          <article><p>Submit app issues and bug reports.</p></article>
+        </details>
+        <details class="settings-dropdown">
+          <summary><span>Terms &amp; Privacy Policy</span><span>Review</span></summary>
+          <article><p>Read terms of service and privacy policies.</p></article>
+        </details>
+      </section>
+
+      <section class="settings-group reveal">
+        <h2>ACCOUNT ACTIONS</h2>
+        <article class="settings-account-actions">
+          <button class="settings-account-btn pressable" type="button" data-settings-logout>Log Out</button>
+          <button class="settings-account-btn settings-account-btn-danger pressable" type="button">Delete Account</button>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <section class="home-nav-overlay" aria-label="Navigation menu">
+    <video class="home-nav-video" autoplay muted loop playsinline>
+      <source src="/Assets/Background Video.mp4" type="video/mp4">
+    </video>
+    <article class="home-nav-dark-layer"></article>
+
+    <article class="home-nav-content">
+      <img class="home-nav-logo" src="/Assets/Login Logo.png" alt="Creestudios logo">
+      <nav class="home-nav-links" aria-label="Overlay links">
+        <button class="home-nav-link pressable" type="button">PROFILE</button>
+        <button class="home-nav-link home-nav-link-active pressable" type="button" data-nav-target="Settings.html">SETTINGS</button>
+        <button class="home-nav-link pressable" type="button">CREE AI</button>
+        <button class="home-nav-link pressable" type="button">FRIEND LINKS</button>
+        <button class="home-nav-link home-nav-link-active pressable" type="button" data-nav-target="Settings.html">SETTINGS</button>
+        <button class="home-nav-link pressable" type="button">NOTIFICATIONS</button>
+        <button class="home-nav-link pressable" type="button">ADD PAGE</button>
+        <button class="home-nav-link pressable" type="button">REPORTS</button>
+      </nav>
+      <button id="homeNavBack" class="home-nav-back pressable" type="button" aria-label="Close menu">
+        <img src="/Assets/cancel icon.png" alt="Cancel icon">
+      </button>
+    </article>
+
+    <footer class="home-nav-footer">
+      <button class="home-nav-logout pressable" type="button">LOGOUT</button>
+    </footer>
+  </section>
+
+  <nav class="app-bottom-nav-shell" aria-label="Primary navigation">
+    <section class="app-bottom-nav">
+      <button class="app-bottom-nav-item pressable" type="button" aria-label="Home" data-nav-target="Home.html">
+        <img src="/Assets/Home Icon Nav.png" alt="Home icon">
+        <span>Home</span>
+      </button>
+      <button class="app-bottom-nav-item pressable" type="button" aria-label="My Jobs" data-nav-target="Home.html">
+        <img src="/Assets/Work Icon Nav.png" alt="My jobs icon">
+        <span>My Jobs</span>
+      </button>
+      <button class="app-bottom-nav-item pressable" type="button" aria-label="CREE AI" data-nav-target="Home.html">
+        <img src="/Assets/Cree Ai Nav.png" alt="Cree AI icon">
+        <span>CREE AI</span>
+      </button>
+      <button class="app-bottom-nav-item pressable" type="button" aria-label="Alerts" data-nav-target="Alerts.html">
+        <img src="/Assets/Alert Icon Nav.png" alt="Alerts icon">
+        <span>Alerts</span>
+      </button>
+    </section>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>

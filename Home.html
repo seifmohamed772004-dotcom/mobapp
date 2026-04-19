@@ -43,7 +43,9 @@
       <article class="home-search-wrap home-search-wrap-panel">
         <img src="/Assets/search Icon.png" alt="Search icon">
         <input id="homeSearchPanelInput" type="search" placeholder="Search posts, people, jobs..." aria-label="Search panel input">
-        <button id="homeSearchClose" class="home-search-close pressable" type="button" aria-label="Close search">X</button>
+        <button id="homeSearchClose" class="home-search-close pressable" type="button" aria-label="Close search">
+          <img src="/Assets/Arrow Left Icon (Onboarding).png" alt="Back icon">
+        </button>
       </article>
 
       <section class="home-search-content">
@@ -165,16 +167,18 @@
 
         <nav class="home-nav-links" aria-label="Overlay links">
           <button class="home-nav-link home-nav-link-active pressable" type="button">PROFILE</button>
-          <button class="home-nav-link pressable" type="button">SETTINGS</button>
+          <button class="home-nav-link pressable" type="button" data-nav-target="Settings.html">SETTINGS</button>
           <button class="home-nav-link pressable" type="button">CREE AI</button>
           <button class="home-nav-link pressable" type="button">FRIEND LINKS</button>
-          <button class="home-nav-link pressable" type="button">SETTINGS</button>
+          <button class="home-nav-link pressable" type="button" data-nav-target="Settings.html">SETTINGS</button>
           <button class="home-nav-link pressable" type="button">NOTIFICATIONS</button>
           <button class="home-nav-link pressable" type="button">ADD PAGE</button>
           <button class="home-nav-link pressable" type="button">REPORTS</button>
         </nav>
 
-        <button id="homeNavBack" class="home-nav-back pressable" type="button">BACK</button>
+        <button id="homeNavBack" class="home-nav-back pressable" type="button" aria-label="Close menu">
+          <img src="/Assets/cancel icon.png" alt="Cancel icon">
+        </button>
       </article>
 
       <footer class="home-nav-footer">
@@ -474,19 +478,19 @@
 
   <nav class="app-bottom-nav-shell" aria-label="Primary navigation">
     <section class="app-bottom-nav">
-      <button class="app-bottom-nav-item app-bottom-nav-item-active pressable" type="button" aria-label="Home">
+      <button class="app-bottom-nav-item app-bottom-nav-item-active pressable" type="button" aria-label="Home" data-nav-target="Home.html">
         <img src="/Assets/Home Icon Nav.png" alt="Home icon">
         <span>Home</span>
       </button>
-      <button class="app-bottom-nav-item pressable" type="button" aria-label="My Jobs">
+      <button class="app-bottom-nav-item pressable" type="button" aria-label="My Jobs" data-nav-target="Home.html">
         <img src="/Assets/Work Icon Nav.png" alt="My jobs icon">
         <span>My Jobs</span>
       </button>
-      <button class="app-bottom-nav-item pressable" type="button" aria-label="CREE AI">
+      <button class="app-bottom-nav-item pressable" type="button" aria-label="CREE AI" data-nav-target="Home.html">
         <img src="/Assets/Cree Ai Nav.png" alt="Cree AI icon">
         <span>CREE AI</span>
       </button>
-      <button class="app-bottom-nav-item pressable" type="button" aria-label="Alerts">
+      <button class="app-bottom-nav-item pressable" type="button" aria-label="Alerts" data-nav-target="Alerts.html">
         <img src="/Assets/Alert Icon Nav.png" alt="Alerts icon">
         <span>Alerts</span>
       </button>
