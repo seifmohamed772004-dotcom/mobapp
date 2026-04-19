@@ -1651,8 +1651,8 @@ body[lang="ar"],
 
 .cree-bubble p {
   font-family: "Unbounded", sans-serif;
-  font-size: 16px;
-  line-height: 1.2;
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .cree-bubble-ai {
@@ -1666,6 +1666,96 @@ body[lang="ar"],
   background-color: #55A887;
   color: #FFEEDC;
   align-self: flex-end;
+}
+
+.cree-chat-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.cree-chat-row--ai {
+  justify-content: flex-start;
+}
+
+.cree-chat-row--user {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+.cree-chat-row .cree-bubble-ai,
+.cree-chat-row .cree-bubble-user {
+  align-self: auto;
+}
+
+.cree-msg-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 250px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.cree-msg-avatar-ai {
+  border: 1px solid #55A887;
+  background-color: #55A887;
+}
+
+.cree-msg-avatar-ai svg {
+  display: block;
+}
+
+.cree-msg-avatar-user {
+  border: 1px solid #55A887;
+  background-color: #55A887;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cree-ai-points {
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cree-ai-point-title {
+  font-family: "Unbounded", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFEEDC;
+  line-height: 1.3;
+}
+
+.cree-ai-point-body {
+  font-family: "Unbounded", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #FFEEDC;
+  line-height: 1.45;
+  opacity: 0.92;
+}
+
+body[data-page="team-chat"] .cree-bubble-ai {
+  background-color: #252525;
+  border-color: #709987;
+  border-radius: 18px 18px 18px 6px;
+}
+
+body[data-page="team-chat"] .cree-bubble-user {
+  background-color: #252525;
+  border: 1px solid #709987;
+  color: #FFEEDC;
+  border-radius: 18px 6px 18px 18px;
 }
 
 .cree-input-dock {
@@ -1697,9 +1787,10 @@ body[lang="ar"],
   color: #FFEEDC;
   padding: 0 24px;
   box-sizing: border-box;
-  font-family: "Choldera Demo", "Unbounded", sans-serif;
-  font-size: 32px;
-  line-height: 1;
+  font-family: "Unbounded", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 .cree-input-form input::placeholder {
@@ -2429,6 +2520,7 @@ body[lang="ar"],
 .team-details-actions {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
 }
@@ -2448,7 +2540,8 @@ body[lang="ar"],
   color: #181818;
 }
 
-.team-details-action-invite {
+.team-details-action-invite,
+.team-details-action-chat {
   flex: 1;
   background: transparent;
   color: #FFEEDC;

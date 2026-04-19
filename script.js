@@ -472,6 +472,63 @@ if (currentPage === "cree-ai") {
   }
 }
 
+if (currentPage === "team-chat") {
+  const teamChatThread = document.querySelector("#teamChatThread");
+  const teamChatForm = document.querySelector("#teamChatForm");
+  const teamChatInput = document.querySelector("#teamChatInput");
+
+  const teamAvatarSvg =
+    '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
+    '<path d="M12 11a3 3 0 100-6 3 3 0 000 6z" stroke="#181818" stroke-width="2"/>' +
+    '<path d="M5 20v-1a7 7 0 0114 0v1" stroke="#181818" stroke-width="2" stroke-linecap="round"/>' +
+    "</svg>";
+
+  const createTeamChatRow = (type, text) => {
+    const row = document.createElement("article");
+    row.className = "cree-chat-row " + (type === "user" ? "cree-chat-row--user" : "cree-chat-row--ai");
+
+    const avatar = document.createElement("span");
+    avatar.className = "cree-msg-avatar " + (type === "user" ? "cree-msg-avatar-user" : "cree-msg-avatar-ai");
+    avatar.setAttribute("aria-hidden", "true");
+    if (type === "user") {
+      avatar.textContent = "U";
+    } else {
+      avatar.innerHTML = teamAvatarSvg;
+    }
+
+    const bubble = document.createElement("article");
+    bubble.className = "cree-bubble " + (type === "user" ? "cree-bubble-user" : "cree-bubble-ai");
+    const paragraph = document.createElement("p");
+    paragraph.textContent = text;
+    bubble.appendChild(paragraph);
+    row.appendChild(avatar);
+    row.appendChild(bubble);
+    return row;
+  };
+
+  if (teamChatForm && teamChatInput && teamChatThread) {
+    teamChatForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const value = teamChatInput.value.trim();
+      if (!value) {
+        return;
+      }
+
+      teamChatThread.appendChild(createTeamChatRow("user", value));
+      teamChatInput.value = "";
+
+      window.setTimeout(() => {
+        teamChatThread.appendChild(
+          createTeamChatRow(
+            "ai",
+            "Echo Studio received your message. The team can reply here or follow up on your next call."
+          )
+        );
+      }, 200);
+    });
+  }
+}
+
 {
   const searchWrap = document.querySelector(".home-search-wrap");
   const searchInput = searchWrap ? searchWrap.querySelector("input") : null;
