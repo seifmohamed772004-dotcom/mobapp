@@ -14,18 +14,18 @@
       </article>
       <article class="hero-content">
         <h1 class="hero-title">WELCOME!</h1>
-        <p class="hero-subtitle">Log in to continue your cretive journey</p>
+        <p class="hero-subtitle">Sign Up to start your cretive journey</p>
       </article>
     </section>
 
     <section class="login-section reveal">
       <article class="title-section">
-        <h2 class="login-title">LOG IN!</h2>
+        <h2 class="login-title">Sign Up!</h2>
       </article>
 
       <form class="login-form" action="#">
         <article class="inputs-section">
-          <label class="field-label" for="email">EMAIL ADDRESS</label>
+          <label class="field-label" for="email">Email Address</label>
           <article class="input-wrap">
             <input id="email" type="email" placeholder="Your@email.com" aria-label="Email address">
             <span class="input-icon" aria-hidden="true">
@@ -33,13 +33,25 @@
             </span>
           </article>
 
-          <label class="field-label" for="password">PASSWORD</label>
+          <label class="field-label" for="password">Password</label>
           <article class="input-wrap">
-            <input id="password" type="password" placeholder="Enter your password" aria-label="Password">
+
+
+          <input id="password" type="password" placeholder="Enter your password" aria-label="Password">
             <button id="passwordToggle" class="input-icon-button pressable" type="button" aria-label="Toggle password visibility">
               <img id="passwordToggleIcon" src="/Assets/Hidden Icon.png" alt="Password hidden icon">
             </button>
           </article>
+
+
+          
+          <label class="field-label" for="confirm-password">Confirm Password</label>
+          <article class="input-wrap">
+          <input id="confirm-password" type="password" placeholder="Confirm your password" aria-label="Confirm password">
+          <button id="confirm-password-toggle" class="input-icon-button pressable" type="button" aria-label="Toggle confirm password visibility">
+            <img id="confirm-password-toggle-icon" src="/Assets/Hidden Icon.png" alt="Confirm password hidden icon">
+          </button>
+        </article>
 
           <a class="forgot-link pressable" href="#">Forgot Password?</a>
         </article>
@@ -60,8 +72,8 @@
             </button>
 
             <footer class="signup-footer">
-              <span>Don't have an account?</span>
-              <a class="signup-link pressable" href="SignUp.html">Sign Up</a>
+              <span>Already have an account?</span>
+              <a class="signup-link pressable" href="Login.html">Log In</a>
             </footer>
           </article>
         </section>
