@@ -234,6 +234,9 @@ if (currentPage === "home") {
   const searchPanel = document.querySelector(".home-search-panel");
   const searchPanelInput = document.querySelector("#homeSearchPanelInput");
   const searchClose = document.querySelector("#homeSearchClose");
+  const menuOpenButtons = document.querySelectorAll("[data-menu-open]");
+  const navOverlay = document.querySelector(".home-nav-overlay");
+  const navBackButton = document.querySelector("#homeNavBack");
 
   if (searchWrap && searchPanel) {
     const openSearchPanel = () => {
@@ -255,6 +258,27 @@ if (currentPage === "home") {
     }
     if (searchClose) {
       searchClose.addEventListener("click", closeSearchPanel);
+    }
+
+    const openNavOverlay = () => {
+      closeSearchPanel();
+      if (navOverlay) {
+        navOverlay.classList.add("is-open");
+      }
+    };
+
+    const closeNavOverlay = () => {
+      if (navOverlay) {
+        navOverlay.classList.remove("is-open");
+      }
+    };
+
+    menuOpenButtons.forEach((button) => {
+      button.addEventListener("click", openNavOverlay);
+    });
+
+    if (navBackButton) {
+      navBackButton.addEventListener("click", closeNavOverlay);
     }
   }
 }
