@@ -237,6 +237,8 @@ if (currentPage === "home") {
   const menuOpenButtons = document.querySelectorAll("[data-menu-open]");
   const navOverlay = document.querySelector(".home-nav-overlay");
   const navBackButton = document.querySelector("#homeNavBack");
+  const navLogoutButton = document.querySelector(".home-nav-logout");
+  const navFooter = document.querySelector(".home-nav-footer");
 
   if (searchWrap && searchPanel) {
     const openSearchPanel = () => {
@@ -279,6 +281,32 @@ if (currentPage === "home") {
 
     if (navBackButton) {
       navBackButton.addEventListener("click", closeNavOverlay);
+    }
+
+    if (navLogoutButton && navFooter) {
+      let logoutArmed = false;
+      let logoutTimer = null;
+
+      const disarmLogout = () => {
+        logoutArmed = false;
+        navFooter.classList.remove("is-logout-armed");
+        if (logoutTimer) {
+          window.clearTimeout(logoutTimer);
+          logoutTimer = null;
+        }
+      };
+
+      navLogoutButton.addEventListener("click", () => {
+        if (!logoutArmed) {
+          logoutArmed = true;
+          navFooter.classList.add("is-logout-armed");
+          logoutTimer = window.setTimeout(disarmLogout, 3000);
+          return;
+        }
+
+        disarmLogout();
+        goWithFade("Login.html");
+      });
     }
   }
 }
