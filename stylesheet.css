@@ -7442,3 +7442,454 @@ body[data-page="job-details"] .reveal {
   font-weight: 700;
   line-height: 1;
 }
+
+body[data-page="create-job-posting"] {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  display: block;
+}
+
+body[data-page="create-job-posting"] .pressable {
+  transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body[data-page="create-job-posting"] .pressable.is-pressed,
+body[data-page="create-job-posting"] .pressable:active {
+  transform: scale(0.96);
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body[data-page="create-job-posting"] .pressable:hover {
+    transform: scale(1.015);
+    opacity: 0.92;
+  }
+}
+
+body[data-page="create-job-posting"] .reveal {
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.create-job-shell {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 0 96px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: #181818;
+}
+
+.create-job-header {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid rgba(112, 153, 135, 0.3);
+}
+
+.create-job-title {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 20px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.create-job-search-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.create-job-search {
+  flex: 1;
+  min-height: 24px;
+  border: 1px solid #709987;
+  border-radius: 4px;
+  background-color: #252525;
+  padding: 0 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.create-job-search img,
+.create-job-filter img {
+  width: 16px;
+  height: 16px;
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.create-job-search input {
+  width: 100%;
+  min-height: 24px;
+  border: 0;
+  background: transparent;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  padding: 0;
+}
+
+.create-job-search input::placeholder {
+  color: #709987;
+}
+
+.create-job-filter {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #709987;
+  border-radius: 4px;
+  background-color: #252525;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-job-content {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.create-job-post-btn {
+  width: 100%;
+  min-height: 24px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #55A887;
+  color: #181818;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.create-job-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.create-job-block-title {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 14px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.create-job-card {
+  width: 100%;
+  border: 1px solid #2D2D2D;
+  border-radius: 16px;
+  background-color: #1E1E1E;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.create-job-card label,
+.create-job-label,
+.create-job-toggle-row p {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.create-job-card input,
+.create-job-card textarea {
+  width: 100%;
+  min-height: 32px;
+  border: 1px solid #709987;
+  border-radius: 4px;
+  background-color: #252525;
+  color: #FFEEDC;
+  padding: 0 8px;
+  box-sizing: border-box;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.create-job-card textarea {
+  min-height: 96px;
+  padding: 8px;
+  resize: vertical;
+}
+
+.create-job-inline-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.create-job-mini-btn {
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #55A887;
+  color: #181818;
+  font-family: "Unbounded", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.create-job-chips {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.create-job-chip {
+  min-height: 24px;
+  border: 1px solid #709987;
+  border-radius: 250px;
+  background-color: #252525;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  padding: 0 8px;
+}
+
+.create-job-chip-on {
+  border-color: #55A887;
+  background-color: rgba(85, 168, 135, 0.2);
+  color: #55A887;
+}
+
+.create-job-segment {
+  width: 100%;
+  border: 1px solid #709987;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.create-job-segment-btn {
+  flex: 1;
+  min-height: 32px;
+  border: 0;
+  border-right: 1px solid #709987;
+  background-color: #252525;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+}
+
+.create-job-segment-btn:last-child {
+  border-right: 0;
+}
+
+.create-job-segment-btn-on {
+  background-color: #55A887;
+  color: #181818;
+}
+
+.create-job-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.create-job-toggle-row {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid #709987;
+  border-radius: 4px;
+  background-color: #252525;
+  padding: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.create-job-toggle {
+  width: 32px;
+  height: 20px;
+  border: 1px solid #709987;
+  border-radius: 250px;
+  background-color: #181818;
+  position: relative;
+}
+
+.create-job-toggle::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 250px;
+  background-color: #709987;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+
+.create-job-toggle-on {
+  background-color: #55A887;
+  border-color: #55A887;
+}
+
+.create-job-toggle-on::after {
+  left: 17px;
+  background-color: #181818;
+}
+
+.create-job-rec-card {
+  width: 100%;
+  border: 1px solid #709987;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #181818;
+}
+
+.create-job-rec-top {
+  width: 100%;
+  min-height: 24px;
+  background: linear-gradient(90deg, #55A887 0%, #709987 50%, #55AAAA 100%);
+  padding: 0 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.create-job-rec-top img {
+  width: 16px;
+  height: 16px;
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.create-job-rec-top span {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFEEDC;
+}
+
+.create-job-rec-main {
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.create-job-rec-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 250px;
+  border: 1px solid #55A887;
+  background-color: rgba(85, 168, 135, 0.25);
+  color: #55A887;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-job-rec-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.create-job-rec-copy p {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 14px;
+  color: #FFEEDC;
+}
+
+.create-job-rec-copy span {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #55A887;
+}
+
+.create-job-rec-btn {
+  min-height: 24px;
+  border: 1px solid #55A887;
+  border-radius: 250px;
+  background-color: transparent;
+  color: #55A887;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0 12px;
+}
+
+.create-job-radio-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.create-job-radio {
+  width: 100%;
+  min-height: 32px;
+  border: 1px solid #709987;
+  border-radius: 4px;
+  background-color: #252525;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  text-align: left;
+  padding: 0 8px;
+}
+
+.create-job-radio-on {
+  border-color: #55A887;
+  background-color: rgba(85, 168, 135, 0.2);
+}
+
+.create-job-publish-btn {
+  width: 100%;
+  min-height: 40px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #55A887;
+  color: #181818;
+  font-family: "Unbounded", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}

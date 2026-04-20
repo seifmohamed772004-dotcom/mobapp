@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Job Posting</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body class="page-enter" data-page="create-job-posting">
+  <main class="create-job-shell">
+    <section class="create-job-header reveal">
+      <article class="home-brand-row">
+        <button class="home-top-button pressable" type="button" aria-label="Open menu" data-menu-open>
+          <img src="/assets/burger menu icon.png" alt="Burger menu icon">
+        </button>
+        <img class="home-brand-logo" src="/assets/Login Logo.png" alt="Creestudios logo">
+        <button class="home-top-button pressable" type="button" aria-label="Change language">
+          <img src="/assets/language globe icon.png" alt="Language icon">
+        </button>
+      </article>
+      <h1 class="create-job-title">CREATE JOB POST</h1>
+      <article class="create-job-search-row">
+        <article class="create-job-search">
+          <img src="/assets/search Icon.png" alt="Search icon">
+          <input type="search" placeholder="Search templates" aria-label="Search templates">
+        </article>
+        <button class="create-job-filter pressable" type="button" aria-label="Filter templates">
+          <img src="NO IMAGE HERE" alt="Filter icon">
+        </button>
+      </article>
+    </section>
+
+    <section class="create-job-content">
+      <section class="create-job-block reveal">
+        <h2 class="create-job-block-title">BASIC INFORMATION</h2>
+        <article class="create-job-card">
+          <label for="cjp-title">Job Title *</label>
+          <input id="cjp-title" type="text" placeholder="Senior UI/UX Designer">
+          <label for="cjp-company">Company Name *</label>
+          <input id="cjp-company" type="text" placeholder="Creative Studios Inc.">
+          <label for="cjp-location">Location</label>
+          <input id="cjp-location" type="text" placeholder="Riyadh, Saudi Arabia">
+        </article>
+      </section>
+
+      <section class="create-job-block reveal">
+        <h2 class="create-job-block-title">JOB DESCRIPTION</h2>
+        <article class="create-job-card">
+          <label for="cjp-desc">Description *</label>
+          <textarea id="cjp-desc" rows="4" placeholder="Write a clear role description..."></textarea>
+          <label for="cjp-resp">Key Responsibilities</label>
+          <textarea id="cjp-resp" rows="4" placeholder="List responsibilities..."></textarea>
+          <label for="cjp-req">Job Requirements</label>
+          <textarea id="cjp-req" rows="4" placeholder="List requirements..."></textarea>
+          <label for="cjp-pref">Preferred Qualifications</label>
+          <textarea id="cjp-pref" rows="4" placeholder="Add preferred qualifications..."></textarea>
+        </article>
+      </section>
+
+      <section class="create-job-block reveal">
+        <h2 class="create-job-block-title">REQUIRED SKILLS</h2>
+        <article class="create-job-card">
+          <label for="cjp-skill">Add Skill *</label>
+          <article class="create-job-inline-row">
+            <input id="cjp-skill" type="text" placeholder="Type skill">
+            <button class="create-job-mini-btn pressable" type="button" aria-label="Add skill">+</button>
+          </article>
+          <article class="create-job-chips">
+            <button class="create-job-chip create-job-chip-on pressable" type="button">Figma</button>
+            <button class="create-job-chip create-job-chip-on pressable" type="button">UI/UX</button>
+            <button class="create-job-chip create-job-chip-on pressable" type="button">Design Systems</button>
+            <button class="create-job-chip pressable" type="button">Prototyping</button>
+            <button class="create-job-chip pressable" type="button">User Research</button>
+          </article>
+        </article>
+      </section>
+
+      <section class="create-job-block reveal">
+        <h2 class="create-job-block-title">BUDGET &amp; TIMELINE</h2>
+        <article class="create-job-card">
+          <p class="create-job-label">Payment Type</p>
+          <article class="create-job-segment">
+            <button class="create-job-segment-btn create-job-segment-btn-on pressable" type="button">Monthly</button>
+            <button class="create-job-segment-btn pressable" type="button">Project</button>
+          </article>
+          <article class="create-job-inline-row">
+            <article class="create-job-field">
+              <label for="cjp-min">Minimum</label>
+              <input id="cjp-min" type="text" placeholder="8000">
+            </article>
+            <article class="create-job-field">
+              <label for="cjp-max">Maximum</label>
+              <input id="cjp-max" type="text" placeholder="10000">
+            </article>
+          </article>
+          <label for="cjp-start">Start Date</label>
+          <input id="cjp-start" type="text" placeholder="MM/DD/YYYY">
+        </article>
+      </section>
+
+      <section class="create-job-block reveal">
+        <h2 class="create-job-block-title">APPLICATION REQUIREMENTS</h2>
+        <article class="create-job-card">
+          <article class="create-job-toggle-row">
+            <p>Require Portfolio</p>
+            <button class="create-job-toggle create-job-toggle-on pressable" type="button" aria-label="Require portfolio"></button>
+          </article>
+          <article class="create-job-toggle-row">
+            <p>Require Resume</p>
+            <button class="create-job-toggle create-job-toggle-on pressable" type="button" aria-label="Require resume"></button>
+          </article>
+          <article class="create-job-toggle-row">
+            <p>Require Cover Letter</p>
+            <button class="create-job-toggle pressable" type="button" aria-label="Require cover letter"></button>
+          </article>
+        </article>
+      </section>
+
+      <section class="create-job-block reveal">
+        <h2 class="create-job-block-title">RECOMMENDATIONS</h2>
+        <article class="create-job-card">
+          <article class="create-job-rec-card pressable">
+            <article class="create-job-rec-top">
+              <img src="/assets/Cree Ai Nav.png" alt="CREE AI icon">
+              <span>CREE AI SUGGESTION</span>
+            </article>
+            <article class="create-job-rec-main">
+              <span class="create-job-rec-avatar">UX</span>
+              <article class="create-job-rec-copy">
+                <p>UX/UI SPECIALISTS</p>
+                <span>16 Members</span>
+              </article>
+              <button class="create-job-rec-btn pressable" type="button">HIRE</button>
+            </article>
+          </article>
+          <article class="create-job-rec-card pressable">
+            <article class="create-job-rec-top">
+              <img src="/assets/Cree Ai Nav.png" alt="CREE AI icon">
+              <span>CREE AI SUGGESTION</span>
+            </article>
+            <article class="create-job-rec-main">
+              <span class="create-job-rec-avatar">CM</span>
+              <article class="create-job-rec-copy">
+                <p>CAMPAIGN MAKERS</p>
+                <span>8 Members</span>
+              </article>
+              <button class="create-job-rec-btn pressable" type="button">HIRE</button>
+            </article>
+          </article>
+        </article>
+      </section>
+
+      <section class="create-job-block reveal">
+        <h2 class="create-job-block-title">PUBLISH &amp; VISIBILITY</h2>
+        <article class="create-job-card">
+          <label for="cjp-tags">Tags (max 5)</label>
+          <article class="create-job-inline-row">
+            <input id="cjp-tags" type="text" placeholder="Add tags">
+            <button class="create-job-mini-btn pressable" type="button" aria-label="Add tag">+</button>
+          </article>
+          <p class="create-job-label">Visibility</p>
+          <article class="create-job-radio-list">
+            <button class="create-job-radio create-job-radio-on pressable" type="button">Public</button>
+            <button class="create-job-radio pressable" type="button">Community</button>
+            <button class="create-job-radio pressable" type="button">Private</button>
+          </article>
+          <article class="create-job-toggle-row">
+            <p>Promote this post</p>
+            <button class="create-job-toggle pressable" type="button" aria-label="Promote this post"></button>
+          </article>
+          <button class="create-job-publish-btn pressable" type="button">Publish Job Post</button>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <nav class="app-bottom-nav-shell" aria-label="Primary navigation">
+    <section class="app-bottom-nav">
+      <button class="app-bottom-nav-item app-bottom-nav-item-active pressable" type="button" aria-label="Home" data-nav-target="Home.html">
+        <img src="/Assets/Home Icon Nav.png" alt="Home icon">
+        <span>Home</span>
+      </button>
+      <button class="app-bottom-nav-item pressable" type="button" aria-label="My Jobs" data-nav-target="Teams.html">
+        <img src="/Assets/Work Icon Nav.png" alt="My jobs icon">
+        <span>My Jobs</span>
+      </button>
+      <button class="app-bottom-nav-item pressable" type="button" aria-label="CREE AI" data-nav-target="CreeAI.html">
+        <img src="/Assets/Cree Ai Nav.png" alt="Cree AI icon">
+        <span>CREE AI</span>
+      </button>
+      <button class="app-bottom-nav-item pressable" type="button" aria-label="Alerts" data-nav-target="Alerts.html">
+        <img src="/Assets/Alert Icon Nav.png" alt="Alerts icon">
+        <span>Alerts</span>
+      </button>
+    </section>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
