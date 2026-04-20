@@ -5510,3 +5510,424 @@ body[data-page="communities-main"] .reveal {
   border: 1px solid #709987;
   color: #FFEEDC;
 }
+
+body[data-page="community-inner"] {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  display: block;
+}
+
+body[data-page="community-inner"] .pressable {
+  transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body[data-page="community-inner"] .pressable.is-pressed,
+body[data-page="community-inner"] .pressable:active {
+  transform: scale(0.96);
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body[data-page="community-inner"] .pressable:hover {
+    transform: scale(1.015);
+    opacity: 0.92;
+  }
+}
+
+body[data-page="community-inner"] .reveal {
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.community-inner-shell {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 0 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: #181818;
+}
+
+.community-inner-header {
+  width: 100%;
+  padding: 16px 16px 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.community-inner-topline {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.community-inner-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 250px;
+  background-color: #55A887;
+}
+
+.community-inner-topline p {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.community-inner-cover {
+  width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.community-inner-cover img {
+  width: 100%;
+  height: 88px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.community-inner-profile {
+  width: 100%;
+  margin-top: -16px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.community-inner-profile-head {
+  width: 100%;
+  border: 1px solid #2D2D2D;
+  border-radius: 16px;
+  background-color: #1E1E1E;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.community-inner-profile-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.community-inner-profile-copy h1 {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 20px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.community-inner-profile-copy p,
+.community-inner-profile-copy span {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #709987;
+  line-height: 1;
+}
+
+.community-inner-share {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #709987;
+  border-radius: 4px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.community-inner-share img {
+  width: 16px;
+  height: 16px;
+}
+
+.community-inner-joined {
+  width: 100%;
+  min-height: 32px;
+  border: 1px solid #709987;
+  border-radius: 4px;
+  background-color: #252525;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.community-inner-stats {
+  width: 100%;
+  border: 1px solid #2D2D2D;
+  border-radius: 16px;
+  background-color: #1E1E1E;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.community-inner-stats article {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.community-inner-stat-value {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 16px;
+  color: #55A887;
+}
+
+.community-inner-stat-label {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #709987;
+}
+
+.community-inner-tabs {
+  width: 100%;
+  border-top: 1px solid #2D2D2D;
+  border-bottom: 1px solid #2D2D2D;
+  padding: 8px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.community-inner-tab {
+  min-height: 24px;
+  border: 1px solid #709987;
+  border-radius: 250px;
+  background-color: #181818;
+  padding: 0 8px;
+  box-sizing: border-box;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #FFEEDC;
+  white-space: nowrap;
+}
+
+.community-inner-tab-active {
+  background-color: #55A887;
+  border-color: #55A887;
+  color: #181818;
+}
+
+.community-inner-section {
+  width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.community-inner-section-title {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 16px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.community-post-card,
+.community-announcement-card,
+.community-creator-row {
+  width: 100%;
+  border: 1px solid #2D2D2D;
+  border-radius: 16px;
+  background-color: #1E1E1E;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.community-post-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.community-post-head {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.community-post-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 250px;
+  background-color: #55A887;
+  flex-shrink: 0;
+}
+
+.community-post-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.community-post-meta p {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFEEDC;
+}
+
+.community-post-meta span,
+.community-post-text,
+.community-post-actions span,
+.community-announcement-copy span,
+.community-event-card span,
+.community-creator-copy span {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #709987;
+  line-height: 1;
+}
+
+.community-post-media {
+  width: 100%;
+  height: 96px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.community-post-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.community-announcement-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.community-announcement-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background-color: rgba(85, 168, 135, 0.2);
+  flex-shrink: 0;
+}
+
+.community-announcement-copy,
+.community-creator-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.community-announcement-copy p,
+.community-event-card p,
+.community-creator-copy p {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 14px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.community-events-head {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.community-view-all {
+  border: 0;
+  background: transparent;
+  color: #709987;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+}
+
+.community-events-scroll {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.community-event-card {
+  min-width: 160px;
+  border: 1px solid #2D2D2D;
+  border-radius: 16px;
+  background-color: #1E1E1E;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.community-event-btn {
+  min-height: 24px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #55A887;
+  color: #181818;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0 8px;
+}
+
+.community-creator-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.community-creator-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.community-follow-btn {
+  min-height: 24px;
+  border: 0;
+  border-radius: 250px;
+  background-color: #55A887;
+  color: #181818;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0 12px;
+}
