@@ -49,9 +49,9 @@ if (currentPage === "splash") {
   if (splashVideo) {
     splashVideo.addEventListener("ended", proceed);
     splashVideo.addEventListener("error", proceed);
-    window.setTimeout(proceed, 3500);
+    window.setTimeout(proceed, 1000000);
   } else {
-    window.setTimeout(proceed, 1500);
+    window.setTimeout(proceed, 1000000);
   }
 }
 
