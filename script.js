@@ -730,6 +730,105 @@ overlayNavLinks.forEach((item) => {
 });
 
 const bottomNavItems = document.querySelectorAll(".app-bottom-nav-item[data-nav-target]");
+
+const navPageGroups = {
+  home: new Set(["home", "communities-main", "community-inner", "friends-main", "member-profile", "friendmemberprofile"]),
+  jobs: new Set([
+    "teams",
+    "team-details",
+    "studio-call",
+    "create-team",
+    "team-chat",
+    "team-tasks",
+    "explore-jobs",
+    "my-jobs",
+    "all-jobs",
+    "job-details",
+    "create-job-posting",
+    "requested-job-inner",
+  ]),
+  cree: new Set(["cree-ai"]),
+  alerts: new Set(["alerts"]),
+};
+
+const navIconMap = {
+  home: {
+    selected: "/Assets/Home Icon Nav.png",
+    unselected: "/Assets/Home Icon Nav (Unselected).png",
+  },
+  jobs: {
+    selected: "/Assets/Work Icon Nav (Selected).png",
+    unselected: "/Assets/Work Icon Nav.png",
+  },
+  cree: {
+    selected: "/Assets/Cree Ai Icon Nav (Selected).png",
+    unselected: "/Assets/Cree Ai Nav.png",
+  },
+  alerts: {
+    selected: "/Assets/Alert Icon Nav (Selected).png",
+    unselected: "/Assets/Alert Icon Nav.png",
+  },
+};
+
+const getNavKeyFromItem = (item) => {
+  const label = (item.getAttribute("aria-label") || "").toLowerCase();
+  if (label.includes("home")) {
+    return "home";
+  }
+  if (label.includes("job")) {
+    return "jobs";
+  }
+  if (label.includes("cree")) {
+    return "cree";
+  }
+  if (label.includes("alert")) {
+    return "alerts";
+  }
+  return null;
+};
+
+const getActiveNavKeyForPage = () => {
+  const pageKey = (currentPage || "").toLowerCase();
+  if (navPageGroups.home.has(pageKey)) {
+    return "home";
+  }
+  if (navPageGroups.jobs.has(pageKey)) {
+    return "jobs";
+  }
+  if (navPageGroups.cree.has(pageKey)) {
+    return "cree";
+  }
+  if (navPageGroups.alerts.has(pageKey)) {
+    return "alerts";
+  }
+  return null;
+};
+
+const applyBottomNavVisualState = () => {
+  const activeNavKey = getActiveNavKeyForPage();
+  bottomNavItems.forEach((item) => {
+    const key = getNavKeyFromItem(item);
+    const icon = item.querySelector("img");
+    const label = item.querySelector("span");
+    const isActive = !!activeNavKey && key === activeNavKey;
+
+    item.classList.toggle("app-bottom-nav-item-active", isActive);
+    item.style.opacity = isActive ? "1" : "0.5";
+
+    if (label) {
+      label.style.color = isActive ? "#55A887" : "#FFEEDC";
+      label.style.opacity = isActive ? "1" : "0.5";
+    }
+
+    if (icon && key && navIconMap[key]) {
+      icon.src = isActive ? navIconMap[key].selected : navIconMap[key].unselected;
+      icon.style.opacity = isActive ? "1" : "0.5";
+    }
+  });
+};
+
+applyBottomNavVisualState();
+
 bottomNavItems.forEach((item) => {
   item.addEventListener("click", () => {
     const target = item.getAttribute("data-nav-target");
@@ -741,8 +840,7 @@ bottomNavItems.forEach((item) => {
     const isCurrentPage = currentPath.endsWith("/" + target.toLowerCase()) || currentPath.endsWith(target.toLowerCase());
 
     if (isCurrentPage) {
-      bottomNavItems.forEach((link) => link.classList.remove("app-bottom-nav-item-active"));
-      item.classList.add("app-bottom-nav-item-active");
+      applyBottomNavVisualState();
       return;
     }
 

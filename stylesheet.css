@@ -886,21 +886,24 @@ body[data-page="signup"] .hero-card::after {
   width: 100%;
   position: fixed;
   left: 0;
+  right: 0;
   bottom: 0;
   z-index: 12;
   display: flex;
   justify-content: center;
-  background-color: transparent;
+  background-color: #181818;
 }
 
 .app-bottom-nav {
   width: 100%;
   max-width: 440px;
-  min-height: 80px;
-  padding: 16px 24px;
+  height: 80px;
+  min-height: 0;
+  margin: 0;
+  padding: 12px 24px;
   box-sizing: border-box;
   border-top: 1px solid rgba(112, 153, 135, 0.35);
-  background: linear-gradient(180deg, rgba(24, 24, 24, 0.95) 0%, #181818 100%);
+  background-color: #181818;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -911,7 +914,7 @@ body[data-page="signup"] .hero-card::after {
   border: 0;
   background: transparent;
   color: #FFEEDC;
-  opacity: 0.7;
+  opacity: 0.5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -925,7 +928,7 @@ body[data-page="signup"] .hero-card::after {
 .app-bottom-nav-item img {
   width: 24px;
   height: auto;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .app-bottom-nav-item-active {
@@ -944,6 +947,25 @@ body[data-page="signup"] .hero-card::after {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+body[data-page="home"] .home-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 440px;
+  z-index: 11;
+  background-color: #181818;
+  border-bottom: 1px solid rgba(112, 153, 135, 0.3);
+}
+
+body[data-page="home"] .home-shell {
+  padding-top: 256px;
+}
+
+body[data-page="home"] .home-content {
+  padding-top: 0;
 }
 
 .home-content {
@@ -995,7 +1017,7 @@ body[data-page="signup"] .hero-card::after {
 .home-create-post-head p {
   font-family: "Unbounded", sans-serif;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 100;
   color: #FFEEDC;
   line-height: 1;
 }
@@ -1041,7 +1063,7 @@ body[data-page="signup"] .hero-card::after {
   background-color: #55A887;
   color: #FFEED9;
   font-family: "Unbounded", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 200;
   line-height: 1;
 }
@@ -8332,4 +8354,8 @@ body[data-page="requested-job-inner"] .reveal {
 .requested-job-accept {
   background-color: #55A887;
   color: #181818;
+}
+
+body * {
+  border-color: rgba(255, 238, 220, 0.2) !important;
 }
