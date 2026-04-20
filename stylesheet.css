@@ -6560,3 +6560,349 @@ body[data-page="explore-jobs"] .reveal {
   font-weight: 700;
   padding: 0 8px;
 }
+
+body[data-page="my-jobs"] {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  display: block;
+}
+
+body[data-page="my-jobs"] .pressable {
+  transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body[data-page="my-jobs"] .pressable.is-pressed,
+body[data-page="my-jobs"] .pressable:active {
+  transform: scale(0.96);
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body[data-page="my-jobs"] .pressable:hover {
+    transform: scale(1.015);
+    opacity: 0.92;
+  }
+}
+
+body[data-page="my-jobs"] .reveal {
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.my-jobs-shell {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 0 96px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: #181818;
+}
+
+.my-jobs-header {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid rgba(112, 153, 135, 0.3);
+}
+
+.my-jobs-title {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 16px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.my-jobs-search-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.my-jobs-search {
+  flex: 1;
+  min-height: 24px;
+  border: 1px solid #709987;
+  border-radius: 4px;
+  background-color: #252525;
+  padding: 0 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.my-jobs-search img,
+.my-jobs-filter img {
+  width: 16px;
+  height: 16px;
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.my-jobs-search input {
+  width: 100%;
+  min-height: 24px;
+  border: 0;
+  background: transparent;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  padding: 0;
+}
+
+.my-jobs-search input::placeholder {
+  color: #709987;
+}
+
+.my-jobs-filter {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #709987;
+  border-radius: 4px;
+  background-color: #252525;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-jobs-post-btn {
+  width: 100%;
+  min-height: 24px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #55A887;
+  color: #181818;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.my-jobs-content {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.my-jobs-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.my-jobs-block-head {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.my-jobs-view-all {
+  border: 0;
+  background: transparent;
+  color: #709987;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+}
+
+.my-jobs-block-title {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 14px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.my-jobs-overview-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.my-jobs-overview-card {
+  width: calc(50% - 4px);
+  border: 1px solid #2D2D2D;
+  border-radius: 16px;
+  background-color: #1E1E1E;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.my-jobs-overview-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background-color: rgba(85, 168, 135, 0.25);
+}
+
+.my-jobs-overview-num {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 32px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.my-jobs-overview-label {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #709987;
+  line-height: 1;
+}
+
+.my-jobs-stat-card {
+  width: 100%;
+  border: 1px solid #2D2D2D;
+  border-radius: 16px;
+  background: linear-gradient(90deg, rgba(85, 168, 135, 0.2) 0%, rgba(85, 170, 170, 0.12) 100%);
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.my-jobs-stat-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.my-jobs-stat-num {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 32px;
+  color: #55A887;
+  line-height: 1;
+}
+
+.my-jobs-stat-label,
+.my-jobs-stat-side span {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #709987;
+  line-height: 1;
+}
+
+.my-jobs-stat-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.my-jobs-stat-side p {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #55A887;
+  line-height: 1;
+}
+
+.my-jobs-job-card,
+.my-jobs-progress-card {
+  width: 100%;
+  border: 1px solid #2D2D2D;
+  border-radius: 16px;
+  background-color: #1E1E1E;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.my-jobs-job-head {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.my-jobs-company-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background-color: rgba(85, 168, 135, 0.25);
+  flex-shrink: 0;
+}
+
+.my-jobs-job-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.my-jobs-job-copy p,
+.my-jobs-progress-card p {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 14px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.my-jobs-job-copy span,
+.my-jobs-progress-card span,
+.my-jobs-progress-row label {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #709987;
+  line-height: 1;
+}
+
+.my-jobs-open-btn,
+.my-jobs-status-chip,
+.my-jobs-expired-btn {
+  width: 100%;
+  min-height: 24px;
+  border-radius: 250px;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0 8px;
+}
+
+.my-jobs-open-btn,
+.my-jobs-status-chip {
+  border: 0;
+  background-color: #55A887;
+  color: #181818;
+}
+
+.my-jobs-expired-btn {
+  border: 0;
+  background-color: #D63A3A;
+  color: #FFEEDC;
+}
+
+.my-jobs-progress-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
