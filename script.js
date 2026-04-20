@@ -896,3 +896,21 @@ genericNavTargets.forEach((item) => {
     }
   });
 });
+
+const languageButtons = document.querySelectorAll('button[aria-label="Change language"]');
+languageButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const path = window.location.pathname;
+    const fileName = path.split("/").pop() || "";
+    if (!fileName || fileName.toLowerCase() === "index.html") {
+      return;
+    }
+
+    const isArabic = fileName.toLowerCase().endsWith("-ar.html");
+    const target = isArabic
+      ? fileName.replace(/-ar\.html$/i, ".html")
+      : fileName.replace(/\.html$/i, "-ar.html");
+
+    goWithFade(target);
+  });
+});
