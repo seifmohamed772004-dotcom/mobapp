@@ -5931,3 +5931,390 @@ body[data-page="community-inner"] .reveal {
   font-weight: 700;
   padding: 0 12px;
 }
+
+body[data-page="friends-main"] {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  display: block;
+}
+
+body[data-page="friends-main"] .pressable {
+  transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body[data-page="friends-main"] .pressable.is-pressed,
+body[data-page="friends-main"] .pressable:active {
+  transform: scale(0.96);
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body[data-page="friends-main"] .pressable:hover {
+    transform: scale(1.015);
+    opacity: 0.92;
+  }
+}
+
+body[data-page="friends-main"] .reveal {
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.friends-shell {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 0 96px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: #181818;
+}
+
+.friends-header {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid rgba(112, 153, 135, 0.3);
+}
+
+.friends-page-title {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.friends-search-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.friends-search-field {
+  flex: 1;
+  min-height: 24px;
+  border: 1px solid #709987;
+  border-radius: 4px;
+  background-color: #252525;
+  padding: 0 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.friends-search-field img {
+  width: 16px;
+  height: 16px;
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.friends-search-field input {
+  width: 100%;
+  min-height: 24px;
+  border: 0;
+  background: transparent;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  padding: 0;
+}
+
+.friends-search-field input::placeholder {
+  color: #709987;
+}
+
+.friends-plus-btn {
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #55A887;
+  color: #181818;
+  font-family: "Unbounded", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.friends-tabs {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.friends-tab {
+  min-height: 24px;
+  border: 1px solid #709987;
+  border-radius: 250px;
+  background-color: #181818;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.friends-tab-active {
+  background-color: #55A887;
+  border-color: #55A887;
+  color: #181818;
+}
+
+.friends-content {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.friends-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.friends-block-head {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.friends-view-all {
+  border: 0;
+  background: transparent;
+  color: #709987;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+}
+
+.friends-block-title {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 14px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.friends-request-card,
+.friends-suggest-card,
+.friends-active-row,
+.friends-invite-card {
+  width: 100%;
+  border: 1px solid #2D2D2D;
+  border-radius: 16px;
+  background-color: #1E1E1E;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.friends-request-card,
+.friends-suggest-card,
+.friends-active-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.friends-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 250px;
+  background-color: #55A887;
+  flex-shrink: 0;
+}
+
+.friends-request-copy,
+.friends-suggest-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.friends-request-copy p,
+.friends-suggest-copy p,
+.friends-active-left p,
+.friends-link-card p,
+.friends-invite-copy p {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 14px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.friends-request-copy span,
+.friends-suggest-copy span,
+.friends-suggest-copy label,
+.friends-link-card span,
+.friends-invite-copy span {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #709987;
+  line-height: 1;
+}
+
+.friends-request-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.friends-accept-btn,
+.friends-decline-btn,
+.friends-msg-btn,
+.friends-connect-btn,
+.friends-send-btn,
+.friends-copy-btn {
+  min-height: 24px;
+  border-radius: 250px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.friends-accept-btn,
+.friends-msg-btn,
+.friends-connect-btn,
+.friends-send-btn {
+  border: 0;
+  background-color: #55A887;
+  color: #181818;
+}
+
+.friends-decline-btn,
+.friends-copy-btn {
+  border: 1px solid #709987;
+  background-color: transparent;
+  color: #FFEEDC;
+}
+
+.friends-link-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.friends-link-card {
+  width: calc(50% - 4px);
+  border: 1px solid #2D2D2D;
+  border-radius: 16px;
+  background-color: #1E1E1E;
+  padding: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.friends-active-row {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.friends-active-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.friends-online-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 250px;
+  background-color: #55A887;
+}
+
+.friends-insights-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.friends-insight-card {
+  width: calc(50% - 4px);
+  border: 1px solid #2D2D2D;
+  border-radius: 16px;
+  background-color: #1E1E1E;
+  padding: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.friends-insight-num {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 20px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.friends-insight-card span {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #709987;
+  line-height: 1;
+}
+
+.friends-invite-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.friends-invite-row {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #2D2D2D;
+  border-radius: 16px;
+  background-color: #181818;
+  padding: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.friends-invite-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
