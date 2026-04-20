@@ -266,6 +266,18 @@ const wireLanguageToggle = () => {
   });
 };
 
+const applyArabicLanguageIcon = (root) => {
+  const buttons = root.querySelectorAll('button[aria-label*="language"], button[aria-label*="اللغة"]');
+  buttons.forEach((button) => {
+    const icon = button.querySelector("img");
+    if (!icon) {
+      return;
+    }
+    icon.src = "/Assets/Ar icon.png";
+    icon.alt = "Arabic language icon";
+  });
+};
+
 const bootArabicPage = async () => {
   if (!arRoot || !basePage) {
     return;
@@ -291,6 +303,7 @@ const bootArabicPage = async () => {
 
     translateDom(arRoot);
     document.title = translateText(document.title);
+    applyArabicLanguageIcon(arRoot);
     wireLanguageToggle();
     installDynamicTranslator(arRoot);
 
