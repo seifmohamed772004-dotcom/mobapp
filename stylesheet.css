@@ -6906,3 +6906,212 @@ body[data-page="my-jobs"] .reveal {
   gap: 8px;
   flex-wrap: wrap;
 }
+
+body[data-page="all-jobs"] {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  display: block;
+}
+
+body[data-page="all-jobs"] .pressable {
+  transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body[data-page="all-jobs"] .pressable.is-pressed,
+body[data-page="all-jobs"] .pressable:active {
+  transform: scale(0.96);
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body[data-page="all-jobs"] .pressable:hover {
+    transform: scale(1.015);
+    opacity: 0.92;
+  }
+}
+
+body[data-page="all-jobs"] .reveal {
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.all-jobs-shell {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 0 96px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: #181818;
+}
+
+.all-jobs-header {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid rgba(112, 153, 135, 0.3);
+}
+
+.all-jobs-title {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 20px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.all-jobs-search-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.all-jobs-search {
+  flex: 1;
+  min-height: 24px;
+  border: 1px solid #709987;
+  border-radius: 4px;
+  background-color: #252525;
+  padding: 0 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.all-jobs-search img,
+.all-jobs-filter img {
+  width: 16px;
+  height: 16px;
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.all-jobs-search input {
+  width: 100%;
+  min-height: 24px;
+  border: 0;
+  background: transparent;
+  color: #FFEEDC;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  padding: 0;
+}
+
+.all-jobs-search input::placeholder {
+  color: #709987;
+}
+
+.all-jobs-filter {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #709987;
+  border-radius: 4px;
+  background-color: #252525;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.all-jobs-topline {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.all-jobs-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 250px;
+  background-color: #55A887;
+}
+
+.all-jobs-topline p {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.all-jobs-content {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.all-jobs-card {
+  width: 100%;
+  border: 1px solid #2D2D2D;
+  border-radius: 16px;
+  background-color: #1E1E1E;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.all-jobs-card-head {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.all-jobs-company-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background-color: rgba(85, 168, 135, 0.25);
+  flex-shrink: 0;
+}
+
+.all-jobs-company-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.all-jobs-company-copy p {
+  font-family: "Choldera Demo", "Unbounded", sans-serif;
+  font-size: 14px;
+  color: #FFEEDC;
+  line-height: 1;
+}
+
+.all-jobs-company-copy span {
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  color: #709987;
+  line-height: 1;
+}
+
+.all-jobs-open-btn {
+  width: 100%;
+  min-height: 24px;
+  border: 0;
+  border-radius: 250px;
+  background-color: #55A887;
+  color: #181818;
+  font-family: "Unbounded", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0 8px;
+}
