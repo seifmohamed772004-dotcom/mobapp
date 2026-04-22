@@ -33,6 +33,46 @@ const showPreloaderThenNavigate = (nextPath, delayMs) => {
 };
 
 const currentPage = document.body.dataset.page;
+const accountsStorageKey = "cree-accounts";
+const pendingSignupStorageKey = "cree-pending-signup";
+
+const readAccounts = () => {
+  try {
+    const raw = window.localStorage.getItem(accountsStorageKey);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    return [];
+  }
+};
+
+const saveAccounts = (accounts) => {
+  window.localStorage.setItem(accountsStorageKey, JSON.stringify(accounts));
+};
+
+const readPendingSignup = () => {
+  try {
+    const raw = window.sessionStorage.getItem(pendingSignupStorageKey);
+    if (!raw) {
+      return null;
+    }
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed.email !== "string" || typeof parsed.password !== "string") {
+      return null;
+    }
+    return parsed;
+  } catch (error) {
+    return null;
+  }
+};
+
+const savePendingSignup = (account) => {
+  window.sessionStorage.setItem(pendingSignupStorageKey, JSON.stringify(account));
+};
+
+const clearPendingSignup = () => {
+  window.sessionStorage.removeItem(pendingSignupStorageKey);
+};
 
 if (currentPage === "splash") {
   const splashVideo = document.querySelector("#splashVideo");
@@ -210,6 +250,16 @@ if (currentPage === "onboarding") {
       if (activeStep < 3) {
         moveToStep(activeStep + 1);
       } else {
+        const pendingSignup = readPendingSignup();
+        if (pendingSignup) {
+          const accounts = readAccounts();
+          const exists = accounts.some((account) => account.email === pendingSignup.email);
+          if (!exists) {
+            accounts.push(pendingSignup);
+            saveAccounts(accounts);
+          }
+          clearPendingSignup();
+        }
         goWithFade("Home.html");
       }
     });
@@ -220,9 +270,65 @@ if (currentPage === "onboarding") {
 
 if (currentPage === "login" || currentPage === "signup") {
   const authForm = document.querySelector(".login-form");
-  if (authForm) {
+  const emailInput = document.querySelector("#email");
+  const passwordInput = document.querySelector("#password");
+  const confirmPasswordInput = document.querySelector("#confirm-password");
+  const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/i;
+
+  if (authForm && emailInput && passwordInput) {
     authForm.addEventListener("submit", (event) => {
       event.preventDefault();
+
+      const email = emailInput.value.trim().toLowerCase();
+      const password = passwordInput.value;
+      if (!email || !password) {
+        window.alert("Please enter your email and password.");
+        return;
+      }
+      if (!gmailPattern.test(email)) {
+        window.alert("Please enter a valid Gmail address.");
+        return;
+      }
+
+      if (currentPage === "signup") {
+        const confirmPassword = confirmPasswordInput ? confirmPasswordInput.value : "";
+        if (confirmPasswordInput && !confirmPassword) {
+          window.alert("Please enter and confirm your password");
+          return;
+        }
+        if (confirmPasswordInput && password !== confirmPassword) {
+          window.alert("Passwords do not match.");
+          return;
+        }
+
+        const accounts = readAccounts();
+        const existingAccount = accounts.find((account) => account.email === email);
+        const pendingSignup = readPendingSignup();
+        if (existingAccount) {
+          window.alert("This email is already registered. Please log in.");
+          return;
+        }
+        if (pendingSignup && pendingSignup.email === email) {
+          window.alert("This email is already registered. Please log in.");
+          return;
+        }
+
+        const accountRecord = { email, password };
+        savePendingSignup(accountRecord);
+        showPreloaderThenNavigate("OnBoarding.html", 500);
+        return;
+      }
+
+      const accounts = readAccounts();
+      const matchedAccount = accounts.find(
+        (account) => account.email === email && account.password === password
+      );
+
+      if (!matchedAccount) {
+        window.alert("Invalid email or password.");
+        return;
+      }
+
       showPreloaderThenNavigate("Home.html", 500);
     });
   }
@@ -592,12 +698,22 @@ if (currentPage === "team-tasks") {
     closeSearchPanel();
     if (navOverlay) {
       navOverlay.classList.add("is-open");
+      if (window.location.hash.toLowerCase() !== "#nav-overlay") {
+        window.history.replaceState(null, "", "#nav-overlay");
+      }
+      return;
     }
+
+    // Fallback for pages that have a burger but no local overlay markup.
+    goWithFade("Home.html#nav-overlay");
   };
 
   const closeNavOverlay = () => {
     if (navOverlay) {
       navOverlay.classList.remove("is-open");
+      if (window.location.hash.toLowerCase() === "#nav-overlay") {
+        window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
     }
   };
 
@@ -605,6 +721,16 @@ if (currentPage === "team-tasks") {
     menuOpenButtons.forEach((button) => {
       button.addEventListener("click", openNavOverlay);
     });
+  }
+
+  if (menuOpenButtons.length > 0 && !navOverlay) {
+    menuOpenButtons.forEach((button) => {
+      button.addEventListener("click", openNavOverlay);
+    });
+  }
+
+  if (navOverlay && window.location.hash.toLowerCase() === "#nav-overlay") {
+    openNavOverlay();
   }
 
   if (navBackButton) {
@@ -711,22 +837,119 @@ likeButtons.forEach((button) => {
   });
 });
 
+const appPageRegistry = [
+  { file: "Home.html", title: "Home", inner: false },
+  { file: "Teams.html", title: "Teams", inner: false },
+  { file: "CreeAI.html", title: "CREE AI", inner: false },
+  { file: "Alerts.html", title: "Alerts", inner: false },
+  { file: "Settings.html", title: "Settings", inner: false },
+  { file: "CommunitiesMain.html", title: "Communities", inner: false },
+  { file: "FriendsMain.html", title: "Friends", inner: false },
+  { file: "ExploreJobs.html", title: "Explore Jobs", inner: false },
+  { file: "MyJobs.html", title: "My Jobs", inner: false },
+  { file: "AllJobs.html", title: "All Jobs", inner: false },
+  { file: "MemberProfile.html", title: "Member Profile", inner: true },
+  { file: "FriendMemberProfile.html", title: "Friend Profile", inner: true },
+  { file: "CommunityInner.html", title: "Community Inner", inner: true },
+  { file: "TeamDetails.html", title: "Team Details", inner: true },
+  { file: "TeamChat.html", title: "Team Chat", inner: true },
+  { file: "TeamTasks.html", title: "Team Tasks", inner: true },
+  { file: "StudioCall.html", title: "Studio Call", inner: true },
+  { file: "CreateTeam.html", title: "Create Team", inner: true },
+  { file: "JobDetails.html", title: "Job Details", inner: true },
+  { file: "CreateJobPosting.html", title: "Create Job Posting", inner: true },
+  { file: "RequestedJobInner.html", title: "Requested Job", inner: true },
+  { file: "Login.html", title: "Login", inner: false },
+  { file: "SignUp.html", title: "Sign Up", inner: false },
+  { file: "OnBoarding.html", title: "Onboarding", inner: false },
+];
+
+const navLabelTargetFallbacks = {
+  "PROFILE": "MemberProfile.html",
+  "FRIEND LINKS": "FriendsMain.html",
+  "NOTIFICATIONS": "Alerts.html",
+  "ADD PAGE": "CreateJobPosting.html",
+  "REPORTS": "TeamTasks.html",
+};
+
+const isCurrentTargetPath = (target) => {
+  if (!target) {
+    return false;
+  }
+  const currentPath = window.location.pathname.toLowerCase();
+  const normalizedTarget = target.toLowerCase();
+  return currentPath.endsWith("/" + normalizedTarget) || currentPath.endsWith(normalizedTarget);
+};
+
+const hydrateOverlayNav = () => {
+  const navContainers = document.querySelectorAll(".home-nav-links");
+  if (navContainers.length === 0) {
+    return;
+  }
+
+  navContainers.forEach((container) => {
+    const existingLinks = Array.from(container.querySelectorAll(".home-nav-link"));
+    const linkedTargets = new Set(
+      existingLinks
+        .map((link) => (link.getAttribute("data-nav-target") || "").toLowerCase())
+        .filter(Boolean)
+    );
+
+    // Auto-link existing overlay labels that were missing targets.
+    existingLinks.forEach((link) => {
+      const hasTarget = !!link.getAttribute("data-nav-target");
+      if (hasTarget) {
+        return;
+      }
+      const normalizedLabel = (link.textContent || "").trim().toUpperCase();
+      const fallbackTarget = navLabelTargetFallbacks[normalizedLabel];
+      if (fallbackTarget) {
+        link.setAttribute("data-nav-target", fallbackTarget);
+        linkedTargets.add(fallbackTarget.toLowerCase());
+      }
+    });
+
+    // Ensure every known page appears in overlay nav if it isn't linked yet.
+    appPageRegistry.forEach((page) => {
+      const normalizedTarget = page.file.toLowerCase();
+      if (linkedTargets.has(normalizedTarget)) {
+        return;
+      }
+
+      const button = document.createElement("button");
+      button.className = "home-nav-link pressable";
+      button.type = "button";
+      button.textContent = page.title.toUpperCase();
+      button.setAttribute("data-nav-target", page.file);
+      if (page.inner) {
+        button.setAttribute("data-inner-page", "true");
+      }
+      container.appendChild(button);
+      linkedTargets.add(normalizedTarget);
+    });
+  });
+};
+
+hydrateOverlayNav();
+
 const overlayNavLinks = document.querySelectorAll(".home-nav-link");
 overlayNavLinks.forEach((item) => {
   item.addEventListener("click", () => {
     const target = item.getAttribute("data-nav-target");
-    if (target) {
-      const currentPath = window.location.pathname.toLowerCase();
-      const isCurrentPage = currentPath.endsWith("/" + target.toLowerCase()) || currentPath.endsWith(target.toLowerCase());
-      if (!isCurrentPage) {
-        goWithFade(target);
-        return;
-      }
+    if (target && !isCurrentTargetPath(target)) {
+      goWithFade(target);
+      return;
     }
 
     overlayNavLinks.forEach((link) => link.classList.remove("home-nav-link-active"));
     item.classList.add("home-nav-link-active");
   });
+
+  const target = item.getAttribute("data-nav-target");
+  if (target && isCurrentTargetPath(target)) {
+    overlayNavLinks.forEach((link) => link.classList.remove("home-nav-link-active"));
+    item.classList.add("home-nav-link-active");
+  }
 });
 
 const bottomNavItems = document.querySelectorAll(".app-bottom-nav-item[data-nav-target]");
@@ -897,20 +1120,3 @@ genericNavTargets.forEach((item) => {
   });
 });
 
-const languageButtons = document.querySelectorAll('button[aria-label="Change language"]');
-languageButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const path = window.location.pathname;
-    const fileName = path.split("/").pop() || "";
-    if (!fileName || fileName.toLowerCase() === "index.html") {
-      return;
-    }
-
-    const isArabic = fileName.toLowerCase().endsWith("-ar.html");
-    const target = isArabic
-      ? fileName.replace(/-ar\.html$/i, ".html")
-      : fileName.replace(/\.html$/i, "-ar.html");
-
-    goWithFade(target);
-  });
-});

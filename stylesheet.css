@@ -89,12 +89,6 @@ body.page-exit {
   transition: opacity 0.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-html[lang="ar"] body,
-body[lang="ar"],
-[lang="ar"] {
-  font-family: "Blue Ocean", "Unbounded", sans-serif;
-}
-
 .app-shell {
   width: 100%;
   max-width: 440px;
@@ -974,7 +968,7 @@ body[data-page="home"] .home-content {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 32px;
 }
 
 .home-create-post {
@@ -1224,6 +1218,13 @@ body[data-page="home"] .home-content {
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  max-height: min(52vh, 430px);
+  overflow-y: auto;
+}
+
+.home-nav-links::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 .home-nav-link {
@@ -1374,7 +1375,7 @@ body[data-page="home"] .home-content {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
 }
 
 .alerts-group {
@@ -1516,7 +1517,7 @@ body[data-page="home"] .home-content {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 }
 
 .settings-group {
@@ -3557,7 +3558,7 @@ body[data-page="team-chat"] .cree-bubble-user {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 }
 
 .home-search-group {
@@ -5432,7 +5433,7 @@ body[data-page="communities-main"] .reveal {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 }
 
 .communities-section {
@@ -6213,7 +6214,7 @@ body[data-page="friends-main"] .reveal {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
 }
 
 .friends-block {
@@ -6595,7 +6596,7 @@ body[data-page="explore-jobs"] .reveal {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
 }
 
 .explore-jobs-section {
@@ -6822,7 +6823,7 @@ body[data-page="my-jobs"] .reveal {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
 }
 
 .my-jobs-block {
@@ -7179,7 +7180,7 @@ body[data-page="all-jobs"] .reveal {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 32px;
 }
 
 .all-jobs-card {
@@ -7336,7 +7337,7 @@ body[data-page="job-details"] .reveal {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
 }
 
 .job-details-intro {
@@ -7692,7 +7693,7 @@ body[data-page="create-job-posting"] .reveal {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
 }
 
 .create-job-post-btn {
@@ -8118,7 +8119,7 @@ body[data-page="requested-job-inner"] .reveal {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
 }
 
 .requested-job-block {
